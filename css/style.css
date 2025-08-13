@@ -34,7 +34,7 @@ section {
     padding: 4rem 0 2rem;
 }
 
-.conatiner {
+.container {
     max-width: 1080px;
     width: 100%;
     margin: auto;
@@ -171,4 +171,118 @@ header {
     align-items: center;
     justify-content: center;
 
+}
+
+.home {
+    position: relative;
+    min-height: 740px;
+    background: linear-gradient(#346748 80%, #bfb496 20%);
+}
+
+.home-img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.home-img img {
+    max-width: 450px;
+    width: 100%;
+}
+
+.home-img::before {
+    content: "Brand";
+    font-size: 22rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+    top: -150px;
+    color: var(--bg-color);
+    z-index: -1;
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.product-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-tittle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin: 0.8rem 0 0.5rem;
+}
+
+.product-price {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.add-to-cart {
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 0.6rem;
+    cursor: pointer;
+}
+
+.cart-container {
+    margin-top: 3rem !important;
+}
+
+
+.back-homepage {
+    display: flex;
+    align-items: center;
+}
+
+
+.back-homepage i {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.back-homepage span {
+    font-size: 1rem;
+    font-weight: 600px;
+    color: var(--text-color);
+
+}
+
+.cart-s-tittle {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
 }
