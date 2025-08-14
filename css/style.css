@@ -339,7 +339,7 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2 ease;
+    transition: all 0.2s ease;
     font-weight: 500;
     color: #4a5568;
 }
@@ -395,4 +395,90 @@ header {
     letter-spacing: 1px;
     text-transform: uppercase;
     max-width: 150px;
+}
+
+.toast-container {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    max-width: 300px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+
+}
+
+.toast-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer {
+    background: #191715;
+    padding: 40px 0;
+}
+
+.footer-c {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    gap: 1rem;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h2 {
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: var(--bg-color);
+    margin-bottom: 2rem;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social i {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.footer-box h3 {
+    font-size: 1.2rem;
+    color: var(--bg-color);
+    text-transform: uppercase;
+}
+
+.footer-box a {
+    color: var(--bg-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    color: var(--bg-color);
+    text-transform: uppercase;
+    padding-top: 30px;
+
 }
