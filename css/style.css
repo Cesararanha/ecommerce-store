@@ -226,7 +226,7 @@ header {
     object-fit: cover;
 }
 
-.product-tittle {
+.product-title {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-color);
@@ -275,7 +275,7 @@ header {
 
 }
 
-.cart-s-tittle {
+.cart-s-title {
     font-size: 3.5rem;
     text-transform: uppercase;
     margin: 1.5rem 0;
@@ -285,4 +285,114 @@ header {
     display: grid;
     grid-template-columns: 80% 20%;
     gap: 1rem;
+}
+
+#cartItems {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cart-title-price {
+    display: grid;
+    gap: 8px
+}
+
+.cart-item-title {
+    font-size: 1.3rem;
+    width: 600;
+}
+
+.cart-item-price {
+    font-size: 1.4rem;
+    width: 600;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.quantity-controls button {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--text-color);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2 ease;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.quantity-controls i {
+    color: var(--text-color);
+    font-size: 17px;
+}
+
+.quantity-controls button:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.quantity-controls input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+    color: var(--text-color);
+    background: transparent;
+    font-size: 0.95rem;
+}
+
+.quantity-controls input:focus {
+
+    outline: none;
+}
+
+.remove-from-cart {
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-t {
+    display: flex;
+    flex-direction: column;
+}
+
+#cartTotal {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.checkout-btn {
+    margin-top: 2rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 150px;
 }
