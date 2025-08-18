@@ -90,74 +90,8 @@ header {
     cursor: pointer;
 }
 
-/* === SEARCH BAR REFEITA === */
-.search-bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 36px;
-    /* combine com a altura do header/menu */
-    width: clamp(180px, 24vw, 320px);
-    /* responsivo */
-    padding: 0 36px 0 12px;
-    /* espaço pro ícone à direita */
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.14);
-    /* branco translúcido sobre o verde */
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    transition: border-color .2s, box-shadow .2s, background .2s;
-}
 
-.search-bar:hover {
-    border-color: rgba(255, 255, 255, 0.45);
-}
-
-.search-bar:focus-within {
-    border-color: #fff;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.18);
-}
-
-/* Input alinhado e sem fundo/borda */
-#search {
-    flex: 1;
-    height: 100%;
-    border: 0;
-    background: transparent;
-    color: #f2f7f3;
-    /* texto claro pra contraste */
-    font: inherit;
-    outline: none;
-    min-width: 0;
-    /* evita overflow em flex */
-}
-
-#search::placeholder {
-    color: rgba(255, 255, 255, 0.70);
-}
-
-/* Ícone de lupa à direita */
-.search-bar .ri-search-line {
-    position: absolute;
-    right: 10px;
-    font-size: 18px;
-    color: #f2f7f3;
-    pointer-events: none;
-    /* clique passa pro input */
-}
-
-/* === Remover o “X” nativo (cross-browser) === */
-/* Chrome/Edge/Opera */
-#search::-webkit-search-cancel-button,
-#search::-webkit-search-decoration,
-#search::-webkit-search-results-button,
-#search::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-}
-
-#car-count {
+#cart-count {
     position: absolute;
     right: -10px;
     bottom: 0;
@@ -315,12 +249,12 @@ header {
 
 .cart-item-title {
     font-size: 1.3rem;
-    width: 600;
+    font-weight: 600;
 }
 
 .cart-item-price {
     font-size: 1.4rem;
-    width: 600;
+    font-weight: 700;
 }
 
 .quantity-controls {
