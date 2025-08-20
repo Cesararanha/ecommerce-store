@@ -10,105 +10,118 @@
     <!-- Link RemixIcons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-<header>
-    <div class="nav container">
-        <!-- Menu Icon -->
-        <i class="ri-menu-line" id="menu-icon"></i>
-        <!-- Logo -->
-        <a href="index.html" class="logo">Brand / Logo</a>
-        <!-- Navbar -->
-        <div class="navbar">
-            <a href="#" class="nav-link">Masculino</a>
-            <a href="feminino.html" class="nav-link">Feminino</a>
-            <a href="infantil.html" class="nav-link">Infantil</a>
-            <a href="calcados.html" class="nav-link">Calçados</a>
-            <a href="acessorios.html" class="nav-link">Acessórios</a>
-        </div>
-        <!-- Search Bar -->
-        <!-- <div class="search-bar">
+
+<body>
+    <header>
+        <div class="nav container">
+            <!-- Menu Icon -->
+            <i class="ri-menu-line" id="menu-icon"></i>
+            <!-- Logo -->
+            <a href="index.html" class="logo">Brand / Logo</a>
+            <!-- Navbar -->
+            <div class="navbar">
+                <a href="#" class="nav-link">Masculino</a>
+                <a href="feminino.html" class="nav-link">Feminino</a>
+                <a href="infantil.html" class="nav-link">Infantil</a>
+                <a href="calcados.html" class="nav-link">Calçados</a>
+                <a href="acessorios.html" class="nav-link">Acessórios</a>
+            </div>
+            <!-- Search Bar -->
+            <!-- <div class="search-bar">
                 <input type="search" placeholder="Buscar produtos..." id="search" aria-label="Buscar" />
                 <i class="ri-search-line" aria-hidden="true"></i>
             </div> -->
-        <!-- Cart Icon -->
-        <a href="/html/cart.html">
-            <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
-        </a>
+            <!-- Cart Icon -->
+            <a href="cart.html">
+                <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
+            </a>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Início</a>
+                <span>›</span>
+                <span>Masculino</span>
+            </nav>
+            <h1 class="page-title">Masculino</h1>
+            <!-- <p class="page-subtitle">Vestidos, blusas, saias e mais</p> -->
+        </div>
+    </section>
+    <!--Products-->
+    <section class="products container" id="products">
+        <!-- Heading -->
+        <!-- <h2 class="heading">Destaques</h2> -->
+        <div class="product-container" id="productList">
+            <div class="product">
+                <img src="/assets/imagens_modelos/masculino/black_suit/Lucid_Origin_Full_body_luxury_fashion_photoshoot_of_a_male_mod_0.jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Black Suit</h2>
+                    <p class="product-price"> $608</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/masculino/black turtleneck/Lucid_Realism_Full_body_luxury_fashion_photoshoot_of_a_male_mo_0.jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Black Turtleneck</h2>
+                    <p class="product-price"> $800</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/masculino/white linen shirt/Lucid_Origin_exquisite_high_fashion_photography_of_Full_body_l_0.jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title">White Linen Shirt</h2>
+                    <p class="product-price"> $60</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="footer" id="footer">
+        <div class="footer-c container">
+            <div class="footer-box">
+                <h2>BRAND</h2>
+                <div class="social">
+                    <a href="#"><i class="ri-pinterest-line"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-facebook-line"></i></a>
+                    <a href="#"><i class="ri-whatsapp-line"></i></a>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3> Ajuda</h3>
+                <a href="#">Contato</a>
+                <a href="#">Faq</a>
+                <a href="#">Envio</a>
+                <a href="#">Pagamento</a>
+                <a href="#">Rastreie seu Pedido</a>
+                <a href="#">Volte ao Pedido</a>
+            </div>
+            <div class="footer-box">
+                <h3> Legal Info</h3>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos e Condições</a>
+                <a href="#">Polítca de Devolução</a>
+                <a href="#">Pagamento</a>
+                <a href="#">Comunidade</a>
+                <a href="#">Cartão</a>
+            </div>
+        </div>
+        <p class="copyright container">&#169; BRAND name</p>
     </div>
-</header>
-<!--Products-->
-<section class="products container" id="products">
-    <!-- Heading -->
-    <h2 class="heading"> Related Products</h2>
-    <div class="product-container" id="productList">
-        <div class="product">
-            <img src="/assets/imagens_modelos/masculino/black_suit/Lucid_Origin_Full_body_luxury_fashion_photoshoot_of_a_male_mod_0.jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Black Suit</h2>
-                <p class="product-price"> $608</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/masculino/black turtleneck/Lucid_Realism_Full_body_luxury_fashion_photoshoot_of_a_male_mo_0.jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Black Turtleneck</h2>
-                <p class="product-price"> $800</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/masculino/white linen shirt/Lucid_Origin_exquisite_high_fashion_photography_of_Full_body_l_0.jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title">White Linen Shirt</h2>
-                <p class="product-price"> $60</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer -->
-<div class="footer" id="footer">
-    <div class="footer-c container">
-        <div class="footer-box">
-            <h2>BRAND</h2>
-            <div class="social">
-                <a href="#"><i class="ri-pinterest-line"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-facebook-line"></i></a>
-                <a href="#"><i class="ri-whatsapp-line"></i></a>
-                <a href="#"><i class="ri-youtube-line"></i></a>
-            </div>
-        </div>
-        <div class="footer-box">
-            <h3> Ajuda</h3>
-            <a href="#">Contato</a>
-            <a href="#">Faq</a>
-            <a href="#">Envio</a>
-            <a href="#">Pagamento</a>
-            <a href="#">Rastreie seu Pedido</a>
-            <a href="#">Volte ao Pedido</a>
-        </div>
-        <div class="footer-box">
-            <h3> Legal Info</h3>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos e Condições</a>
-            <a href="#">Polítca de Devolução</a>
-            <a href="#">Pagamento</a>
-            <a href="#">Comunidade</a>
-            <a href="#">Cartão</a>
-        </div>
-    </div>
-    <p class="copyright container">&#169; BRAND name</p>
-</div>
 
-<script src="/js/main.js"></script>
-<script src="/js/menu.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/menu.js"></script>
 </body>
 
 </html>

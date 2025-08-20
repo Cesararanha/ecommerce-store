@@ -18,7 +18,7 @@
             <!-- Menu Icon -->
             <i class="ri-menu-line" id="menu-icon"></i>
             <!-- Logo -->
-            <a href="#" class="logo">Brand / Logo</a>
+            <a href="index.html" class="logo">Brand / Logo</a>
             <!-- Navbar -->
             <div class="navbar">
                 <a href="masculino.html" class="nav-link">Masculino</a>
@@ -33,17 +33,51 @@
                 <i class="ri-search-line" aria-hidden="true"></i>
             </div> -->
             <!-- Cart Icon -->
-            <a href="/html/cart.html">
+            <a href="cart.html">
                 <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
             </a>
         </div>
     </header>
-    <!-- Home  -->
-    <section class="home" id="home">
-        <div class="home-img container">
-            <img src="/assets/images/home.png">
+    <!-- Slider  -->
+    <div class="slider">
+        <div class="slides">
+            <!-- Radio buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!-- Slide Images -->
+            <div class="slide first">
+                <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_0.jpg"
+                    alt="Imagem 1" />
+            </div>
+            <div class="slide">
+                <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_1.jpg"
+                    alt="Imagem 2" />
+            </div>
+            <div class="slide">
+                <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_3.jpg"
+                    alt="Imagem 3" />
+            </div>
+            <div class="slide">
+                <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_website_hero_banner_cinem_1.jpg"
+                    alt="Imagem 4" />
+            </div>
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
         </div>
-    </section>
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+
 
     <!--Products-->
     <section class="products container" id="products">
@@ -88,7 +122,9 @@
         <p class="copyright container">&#169; BRAND name</p>
     </div>
 
+
     <script src="/js/main.js"></script>
+    <script src="/js/slider.js"></script>
     <script src="/js/menu.js"></script>
 </body>
 

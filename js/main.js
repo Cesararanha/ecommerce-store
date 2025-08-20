@@ -70,7 +70,7 @@ function displayCartItems() {
                     <i class="ri-subtract-line"></i>
                 </button>
                 <input type="text" name="" class="cart-item-quantity" value="${item.quantity}" min="1"
-                    onchange="updateQuantity('${item.name}', this.value)" readonly>
+                     onchange="updateQuantity('${item.name}', this.value)" readonly>
                     <button onclick="changeQuantity('${item.name}', +1)">
                         <i class="ri-add-line"></i>
                     </button>

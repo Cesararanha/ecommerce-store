@@ -1,10 +1,3 @@
-/* =========================================================
-   Luxury Maison Theme v1 — drop-in replacement do seu style.css
-   - Preserva as classes/estrutura atuais (cart, produtos, navbar)
-   - Minimalista, elegante e com foco na sua marca
-   ========================================================= */
-
-/* Fontes (serif refinada + sans neutra) */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Tokens de cor e escala */
@@ -35,6 +28,8 @@
     --ff-heading: "Playfair Display", serif;
     --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --lh: 1.5;
+
+    --nav-h: 72px;
 }
 
 /* Base */
@@ -49,7 +44,7 @@ body {
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: var(--nav-h);
 }
 
 body {
@@ -165,6 +160,63 @@ header {
 /* ---------------------------------------------------------
    Home / Hero (quando existir)
 --------------------------------------------------------- */
+.page-hero {
+    margin-top: 0;
+}
+
+.page-hero+.products {
+    padding-top: calc(var(--sp-6) + var(--sp-3));
+}
+
+header+.slider,
+header+.home,
+header+.page-hero {
+    margin-top: var(--nav-h);
+}
+
+.page-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.page-subtitle {
+    margin: 0;
+    color: #777;
+    font-size: .95rem;
+}
+
+.breadcrumbs {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    font-size: .9rem;
+    color: #777;
+}
+
+.breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+[id] {
+    scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+
+.navbar .nav-link[aria-current="page"] {
+    font-weight: 600;
+    border-bottom: 2px solid currentColor;
+}
+
 .home {
     position: relative;
     min-height: 64vh;
@@ -186,7 +238,6 @@ header {
 
 .home-img::before {
     content: "";
-    /* remove palavra 'Brand' gigante para um look mais limpo */
 }
 
 /* ---------------------------------------------------------
@@ -227,6 +278,10 @@ header {
     height: 420px;
     object-fit: cover;
     background: #f3f1ec;
+}
+
+.products {
+    padding-bottom: calc(var(--sp-6) + var(--sp-3));
 }
 
 .product-info {
@@ -296,7 +351,6 @@ header {
     font-weight: 600;
 }
 
-/* corrigido 600 */
 
 .cart-s-title {
     font-family: var(--ff-heading);
@@ -506,6 +560,101 @@ header {
     padding-top: 28px;
 }
 
+.slider {
+    position: relative;
+    max-width: 1160px;
+    width: 100%;
+    margin: calc(var(--nav-h) + var(--sp-2)) auto var(--sp-6);
+    overflow: hidden;
+    height: clamp(840px, 50vh, 420px);
+}
+
+.slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+
+.slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 22%;
+}
+
+
+.manual-navigation,
+.navigation-auto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 16px;
+    display: flex;
+    gap: 16px;
+    width: auto;
+    margin: 0;
+}
+
+.manual-btn,
+.navigation-auto div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+
+.manual-btn:hover {
+    background-color: #fff;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -25%;
+}
+
+#radio3:checked~.first {
+    margin-left: -50%;
+}
+
+#radio4:checked~.first {
+    margin-left: -75%;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1,
+#radio2:checked~.navigation-auto .auto-btn2,
+#radio3:checked~.navigation-auto .auto-btn3,
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background-color: #fff;
+}
+
+.slider+.products {
+    padding-top: calc(var(--sp-6) + var(--sp-3));
+}
+
+.products {
+    padding-bottom: calc(var(--sp-6) + var(--sp-3));
+}
+
 /* ---------------------------------------------------------
    Responsividade
 --------------------------------------------------------- */
@@ -515,7 +664,6 @@ header {
         margin: 0 auto;
     }
 
-    /* corrigido 'aut' -> 'auto' */
 }
 
 @media (max-width: 1024px) {
@@ -525,6 +673,11 @@ header {
 }
 
 @media (max-width: 720px) {
+
+    :root {
+        --nav-h: 64px;
+    }
+
     .nav {
         height: 64px;
     }

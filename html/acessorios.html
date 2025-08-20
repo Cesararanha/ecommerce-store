@@ -10,146 +10,159 @@
     <!-- Link RemixIcons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
-<header>
-    <div class="nav container">
-        <!-- Menu Icon -->
-        <i class="ri-menu-line" id="menu-icon"></i>
-        <!-- Logo -->
-        <a href="index.html" class="logo">Brand / Logo</a>
-        <!-- Navbar -->
-        <div class="navbar">
-            <a href="masculino.html" class="nav-link">Masculino</a>
-            <a href="feminino.html" class="nav-link">Feminino</a>
-            <a href="infantil.html" class="nav-link">Infantil</a>
-            <a href="calcados.html" class="nav-link">Calçados</a>
-            <a href="#" class="nav-link">Acessórios</a>
-        </div>
-        <!-- Search Bar -->
-        <!-- <div class="search-bar">
+
+<body>
+    <header>
+        <div class="nav container">
+            <!-- Menu Icon -->
+            <i class="ri-menu-line" id="menu-icon"></i>
+            <!-- Logo -->
+            <a href="index.html" class="logo">Brand / Logo</a>
+            <!-- Navbar -->
+            <div class="navbar">
+                <a href="masculino.html" class="nav-link">Masculino</a>
+                <a href="feminino.html" class="nav-link">Feminino</a>
+                <a href="infantil.html" class="nav-link">Infantil</a>
+                <a href="calcados.html" class="nav-link">Calçados</a>
+                <a href="#" class="nav-link">Acessórios</a>
+            </div>
+            <!-- Search Bar -->
+            <!-- <div class="search-bar">
                 <input type="search" placeholder="Buscar produtos..." id="search" aria-label="Buscar" />
                 <i class="ri-search-line" aria-hidden="true"></i>
             </div> -->
-        <!-- Cart Icon -->
-        <a href="/html/cart.html">
-            <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
-        </a>
-    </div>
-</header>
-<!--Products-->
-<section class="products container" id="products">
-    <!-- Heading -->
-    <h2 class="heading"> Acessórios</h2>
-    <div class="product-container" id="productList">
+            <!-- Cart Icon -->
+            <a href="cart.html">
+                <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
+            </a>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Início</a>
+                <span>›</span>
+                <span>Acessórios</span>
+            </nav>
+            <h1 class="page-title">Acessórios</h1>
+            <!-- <p class="page-subtitle">Vestidos, blusas, saias e mais</p> -->
+        </div>
+    </section>
+    <!--Products-->
+    <section class="products container" id="products">
+        <!-- Heading -->
+        <!-- <h2 class="heading"> Destaques</h2> -->
+        <div class="product-container" id="productList">
 
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/bolsa/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Leather Handbag</h2>
-                <p class="product-price"> $6008</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/bolsa/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Leather Handbag</h2>
+                    <p class="product-price"> $6008</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Silk Scarf</h2>
+                    <p class="product-price"> $68</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (1).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Sunglasses</h2>
+                    <p class="product-price"> $68</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (2).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Leather Wristwatch</h2>
+                    <p class="product-price"> $19980</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1 (2).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title">Dark Leather Wristwatch</h2>
+                    <p class="product-price"> $19980</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__2 (2).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title"> Gold Wristwatch</h2>
+                    <p class="product-price"> $59980</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (2).jpg"
+                    class="product-img" alt="product">
+                <div class="product-info">
+                    <h2 class="product-title">Black Leather Wristwatch</h2>
+                    <p class="product-price"> $19980</p>
+                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
+                        Add to cart</a>
+                </div>
             </div>
         </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Silk Scarf</h2>
-                <p class="product-price"> $68</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
+    </section>
+    <!-- Footer -->
+    <div class="footer" id="footer">
+        <div class="footer-c container">
+            <div class="footer-box">
+                <h2>BRAND</h2>
+                <div class="social">
+                    <a href="#"><i class="ri-pinterest-line"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-facebook-line"></i></a>
+                    <a href="#"><i class="ri-whatsapp-line"></i></a>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3> Ajuda</h3>
+                <a href="#">Contato</a>
+                <a href="#">Faq</a>
+                <a href="#">Envio</a>
+                <a href="#">Pagamento</a>
+                <a href="#">Rastreie seu Pedido</a>
+                <a href="#">Volte ao Pedido</a>
+            </div>
+            <div class="footer-box">
+                <h3> Legal Info</h3>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos e Condições</a>
+                <a href="#">Polítca de Devolução</a>
+                <a href="#">Pagamento</a>
+                <a href="#">Comunidade</a>
+                <a href="#">Cartão</a>
             </div>
         </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (1).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Sunglasses</h2>
-                <p class="product-price"> $68</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (2).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Leather Wristwatch</h2>
-                <p class="product-price"> $19980</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1 (2).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title">Dark Leather Wristwatch</h2>
-                <p class="product-price"> $19980</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__2 (2).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title"> Gold Wristwatch</h2>
-                <p class="product-price"> $59980</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (2).jpg"
-                class="product-img" alt="product">
-            <div class="product-info">
-                <h2 class="product-title">Black Leather Wristwatch</h2>
-                <p class="product-price"> $19980</p>
-                <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                    Add to cart</a>
-            </div>
-        </div>
+        <p class="copyright container">&#169; BRAND name</p>
     </div>
-</section>
-<!-- Footer -->
-<div class="footer" id="footer">
-    <div class="footer-c container">
-        <div class="footer-box">
-            <h2>BRAND</h2>
-            <div class="social">
-                <a href="#"><i class="ri-pinterest-line"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-facebook-line"></i></a>
-                <a href="#"><i class="ri-whatsapp-line"></i></a>
-                <a href="#"><i class="ri-youtube-line"></i></a>
-            </div>
-        </div>
-        <div class="footer-box">
-            <h3> Ajuda</h3>
-            <a href="#">Contato</a>
-            <a href="#">Faq</a>
-            <a href="#">Envio</a>
-            <a href="#">Pagamento</a>
-            <a href="#">Rastreie seu Pedido</a>
-            <a href="#">Volte ao Pedido</a>
-        </div>
-        <div class="footer-box">
-            <h3> Legal Info</h3>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos e Condições</a>
-            <a href="#">Polítca de Devolução</a>
-            <a href="#">Pagamento</a>
-            <a href="#">Comunidade</a>
-            <a href="#">Cartão</a>
-        </div>
-    </div>
-    <p class="copyright container">&#169; BRAND name</p>
-</div>
 
-<script src="/js/main.js"></script>
-<script src="/js/menu.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/menu.js"></script>
 </body>
 
 </html>
