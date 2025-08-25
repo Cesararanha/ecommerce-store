@@ -172,6 +172,8 @@ header+.slider,
 header+.home,
 header+.page-hero {
     margin-top: var(--nav-h);
+
+
 }
 
 .page-title {
@@ -562,11 +564,127 @@ header+.page-hero {
 
 .slider {
     position: relative;
-    max-width: 1160px;
     width: 100%;
-    margin: calc(var(--nav-h) + var(--sp-2)) auto var(--sp-6);
+    margin: var(--nav-h) 0 0;
     overflow: hidden;
-    height: clamp(840px, 50vh, 420px);
+    height: clamp(520px, 80vh, 860px);
+}
+
+.slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 17, 17, .55) 0 45%, rgba(17, 17, 17, 0) 65%);
+    pointer-events: none;
+    z-index: 1;
+    /* abaixo do texto, acima da imagem */
+}
+
+/* Camada do texto */
+.hero-card-heading-wrapper {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: end center;
+    /* padding lateral mantém respiro; bottom soma env(safe-area) e espaço dos dots */
+    padding: clamp(var(--sp-4), 3vw, var(--sp-6)) clamp(var(--sp-4), 4vw, var(--sp-6)) calc(max(20px, env(safe-area-inset-bottom)) + 42px);
+    z-index: 2;
+}
+
+/* Cartão/stack do conteúdo */
+.hero-card-heading {
+    text-align: center;
+    color: #fff;
+    max-width: min(980px, 92vw);
+    margin-inline: auto;
+    display: grid;
+    gap: clamp(var(--sp-2), 2vw, var(--sp-4));
+}
+
+/* Título */
+.hero-card-heading-title span {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 600;
+    line-height: 1.15;
+    font-size: clamp(1.2rem, 4.2vw + .4rem, 2.6rem);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+}
+
+/* Descrição */
+.hero-card-heading-decription span {
+    display: block;
+    font-family: var(--ff-body);
+    color: rgba(255, 255, 255, .92);
+    font-size: clamp(.9rem, 1.4vw + .55rem, 1rem);
+    line-height: 1.6;
+    max-width: 70ch;
+    margin-inline: auto;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
+}
+
+/* Botões alinhados e com o visual do site */
+.hero-card-heading-buttons {
+    display: inline-flex;
+    gap: clamp(var(--sp-2), 2.8vw, var(--sp-4));
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Tornar <a> “botão” minimalista (herda do estilo .add-to-cart) */
+.hero-card-heading-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    /* alvo de toque mínimo */
+    padding: 0 clamp(var(--sp-4), 4.2vw, var(--sp-5));
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: clamp(.85rem, 1.2vw + .55rem, .95rem);
+    text-decoration: none;
+    transition: color .2s ease, background .2s ease, border-color .2s ease, transform .15s ease;
+    will-change: transform;
+}
+
+.hero-card-heading-buttons a:hover {
+    background: #fff;
+    color: var(--text);
+    border-color: #fff;
+    transform: translateY(-1px);
+}
+
+/* Foco acessível */
+.hero-card-heading-buttons a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Espaço para os dots do carrossel */
+.manual-navigation,
+.navigation-auto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12px;
+    display: flex;
+    gap: 14px;
+    margin: 0;
+}
+
+.manual-btn,
+.navigation-auto div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: .3s;
 }
 
 .slides {
@@ -738,6 +856,26 @@ header+.page-hero {
     .heading {
         font-size: 2.2rem;
     }
+
+    .hero-card-heading-wrapper {
+        padding:
+            clamp(var(--sp-3), 3.5vw, var(--sp-4)) clamp(var(--sp-3), 5vw, var(--sp-5)) calc(max(22px, env(safe-area-inset-bottom)) + 48px);
+    }
+
+    .hero-card-heading-title span {
+        font-size: clamp(1.1rem, 5.2vw + .35rem, 2.1rem);
+        line-height: 1.2;
+    }
+
+    .hero-card-heading-decription span {
+        font-size: clamp(.85rem, 1.6vw + .5rem, .95rem);
+    }
+
+    .hero-card-heading-buttons a {
+        min-height: 42px;
+        padding: 0 var(--sp-4);
+    }
+
 }
 
 @media (max-width: 420px) {
@@ -755,5 +893,34 @@ header+.page-hero {
         max-width: 340px;
     }
 
+    .hero-card-heading-decription span {
+        max-width: 62ch;
+        /* ligeiro estreitamento pra evitar “espremer” */
+    }
 
+    .hero-card-heading-buttons {
+        gap: var(--sp-2);
+    }
+
+    .manual-btn,
+    .navigation-auto div {
+        width: 8px;
+        height: 8px;
+        /* dots um tiquinho menores */
+    }
+
+
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+    .slider {
+        height: clamp(560px, 85vh, 900px);
+    }
+}
+
+@supports (height: 100dvh) {
+    .slider {
+        /* entre 520px e (viewport cheio - header), com teto de 900px */
+        height: clamp(520px, calc(100dvh - var(--nav-h)), 900px);
+    }
 }
