@@ -1,22 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Tokens de cor e escala */
+/* =========================
+   TOKENS / DESIGN SYSTEM
+========================= */
 :root {
     --bg: #F7F5F0;
-    /* off-white editorial */
     --surface: #FFFFFF;
-    /* cards / header */
     --text: #111111;
-    /* texto principal */
     --muted: #6B6B6B;
-    /* texto secundário */
     --accent: #C8A96A;
-    /* dourado discreto */
     --border: #E6E2DA;
-    /* linhas sutis */
     --shadow: 0 10px 25px rgba(0, 0, 0, .06);
 
-    /* Espaços */
     --sp-1: .5rem;
     --sp-2: .75rem;
     --sp-3: 1rem;
@@ -24,7 +19,6 @@
     --sp-5: 2rem;
     --sp-6: 3rem;
 
-    /* Tipografia */
     --ff-heading: "Playfair Display", serif;
     --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --lh: 1.5;
@@ -32,7 +26,9 @@
     --nav-h: 72px;
 }
 
-/* Base */
+/* =========================
+   BASE
+========================= */
 * {
     box-sizing: border-box;
 }
@@ -65,7 +61,6 @@ a {
     text-decoration: none;
 }
 
-/* Containers/Sections */
 .container {
     max-width: 1160px;
     width: 100%;
@@ -77,9 +72,9 @@ section {
     padding: var(--sp-6) 0 var(--sp-5);
 }
 
-/* ---------------------------------------------------------
-   Header / Navbar — clean, com linhas finas
---------------------------------------------------------- */
+/* =========================
+   HEADER / NAV
+========================= */
 header {
     position: fixed;
     top: 0;
@@ -157,59 +152,7 @@ header {
     justify-content: center;
 }
 
-/* ---------------------------------------------------------
-   Home / Hero (quando existir)
---------------------------------------------------------- */
-.page-hero {
-    margin-top: 0;
-}
-
-.page-hero+.products {
-    padding-top: calc(var(--sp-6) + var(--sp-3));
-}
-
-header+.slider,
-header+.home,
-header+.page-hero {
-    margin-top: var(--nav-h);
-
-
-}
-
-.page-title {
-    margin: 0;
-    font-weight: 600;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-}
-
-.page-subtitle {
-    margin: 0;
-    color: #777;
-    font-size: .95rem;
-}
-
-.breadcrumbs {
-    display: inline-flex;
-    gap: .5rem;
-    align-items: center;
-    font-size: .9rem;
-    color: #777;
-}
-
-.breadcrumbs a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.breadcrumbs a:hover {
-    text-decoration: underline;
-}
-
-
-
-
+/* páginas internas (breadcrumbs/título) */
 [id] {
     scroll-margin-top: calc(var(--nav-h) + 12px);
 }
@@ -219,6 +162,17 @@ header+.page-hero {
     border-bottom: 2px solid currentColor;
 }
 
+.page-hero {
+    margin-top: 0;
+}
+
+header+.page-hero {
+    margin-top: var(--nav-h);
+}
+
+/* respiro sob o header fixo */
+
+/* opcional: seção home simples */
 .home {
     position: relative;
     min-height: 64vh;
@@ -238,13 +192,9 @@ header+.page-hero {
     width: 100%;
 }
 
-.home-img::before {
-    content: "";
-}
-
-/* ---------------------------------------------------------
-   Títulos / Headings
---------------------------------------------------------- */
+/* =========================
+   HEADINGS
+========================= */
 .heading {
     font-family: var(--ff-heading);
     text-transform: uppercase;
@@ -255,9 +205,9 @@ header+.page-hero {
     margin: 0 0 var(--sp-4);
 }
 
-/* ---------------------------------------------------------
-   Grid de Produtos
---------------------------------------------------------- */
+/* =========================
+   PRODUCTS
+========================= */
 .product-container {
     display: grid;
     gap: var(--sp-4);
@@ -307,7 +257,7 @@ header+.page-hero {
     opacity: .85;
 }
 
-/* Botão minimalista */
+/* botão */
 .add-to-cart {
     margin-top: var(--sp-3);
     display: inline-flex;
@@ -330,9 +280,9 @@ header+.page-hero {
     border-color: var(--text);
 }
 
-/* ---------------------------------------------------------
-   Carrinho
---------------------------------------------------------- */
+/* =========================
+   CART
+========================= */
 .cart-container {
     margin-top: calc(72px + var(--sp-4)) !important;
 }
@@ -352,7 +302,6 @@ header+.page-hero {
     font-size: .95rem;
     font-weight: 600;
 }
-
 
 .cart-s-title {
     font-family: var(--ff-heading);
@@ -468,9 +417,9 @@ header+.page-hero {
     font-weight: 600;
 }
 
-/* ---------------------------------------------------------
-   Toasts (feedback)
---------------------------------------------------------- */
+/* =========================
+   TOASTS
+========================= */
 .toast-container {
     position: fixed;
     top: 100px;
@@ -499,9 +448,9 @@ header+.page-hero {
     transform: translateX(0);
 }
 
-/* ---------------------------------------------------------
-   Footer — editorial, escuro
---------------------------------------------------------- */
+/* =========================
+   FOOTER
+========================= */
 .footer {
     background: #111;
     color: #fff;
@@ -523,7 +472,7 @@ header+.page-hero {
 .footer-box h2 {
     font-family: var(--ff-heading);
     font-size: 4rem;
-    line-height: 0.9;
+    line-height: .9;
     text-transform: uppercase;
     color: #fff;
     margin-bottom: var(--sp-3);
@@ -539,7 +488,6 @@ header+.page-hero {
 .footer-box a {
     color: #ddd;
     font-size: .95rem;
-    text-transform: none;
     margin-bottom: .5rem;
 }
 
@@ -562,12 +510,21 @@ header+.page-hero {
     padding-top: 28px;
 }
 
+/* =========================
+   HERO / SLIDER
+========================= */
 .slider {
     position: relative;
     width: 100%;
     margin: var(--nav-h) 0 0;
     overflow: hidden;
     height: clamp(520px, 80vh, 860px);
+}
+
+@supports (height:100dvh) {
+    .slider {
+        height: clamp(520px, calc(100dvh - var(--nav-h)), 900px);
+    }
 }
 
 .slider::after {
@@ -577,21 +534,18 @@ header+.page-hero {
     background: linear-gradient(to top, rgba(17, 17, 17, .55) 0 45%, rgba(17, 17, 17, 0) 65%);
     pointer-events: none;
     z-index: 1;
-    /* abaixo do texto, acima da imagem */
 }
 
-/* Camada do texto */
+/* Texto sobre o slider */
 .hero-card-heading-wrapper {
     position: absolute;
     inset: 0;
     display: grid;
     place-items: end center;
-    /* padding lateral mantém respiro; bottom soma env(safe-area) e espaço dos dots */
     padding: clamp(var(--sp-4), 3vw, var(--sp-6)) clamp(var(--sp-4), 4vw, var(--sp-6)) calc(max(20px, env(safe-area-inset-bottom)) + 42px);
     z-index: 2;
 }
 
-/* Cartão/stack do conteúdo */
 .hero-card-heading {
     text-align: center;
     color: #fff;
@@ -601,7 +555,6 @@ header+.page-hero {
     gap: clamp(var(--sp-2), 2vw, var(--sp-4));
 }
 
-/* Título */
 .hero-card-heading-title span {
     font-family: var(--ff-heading);
     text-transform: uppercase;
@@ -612,7 +565,6 @@ header+.page-hero {
     text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
 }
 
-/* Descrição */
 .hero-card-heading-decription span {
     display: block;
     font-family: var(--ff-body);
@@ -624,7 +576,6 @@ header+.page-hero {
     text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
 }
 
-/* Botões alinhados e com o visual do site */
 .hero-card-heading-buttons {
     display: inline-flex;
     gap: clamp(var(--sp-2), 2.8vw, var(--sp-4));
@@ -633,13 +584,11 @@ header+.page-hero {
     flex-wrap: wrap;
 }
 
-/* Tornar <a> “botão” minimalista (herda do estilo .add-to-cart) */
 .hero-card-heading-buttons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
-    /* alvo de toque mínimo */
     padding: 0 clamp(var(--sp-4), 4.2vw, var(--sp-5));
     border: 1px solid #fff;
     color: #fff;
@@ -660,13 +609,37 @@ header+.page-hero {
     transform: translateY(-1px);
 }
 
-/* Foco acessível */
 .hero-card-heading-buttons a:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
 
-/* Espaço para os dots do carrossel */
+/* Slides */
+.slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 22%;
+}
+
+/* Dots (manual & auto) — unificado */
 .manual-navigation,
 .navigation-auto {
     position: absolute;
@@ -684,64 +657,16 @@ header+.page-hero {
     height: 10px;
     border-radius: 50%;
     border: 2px solid #fff;
-    transition: .3s;
-}
-
-.slides {
-    width: 400%;
-    height: 100%;
-    display: flex;
-}
-
-.slides input {
-    display: none;
-}
-
-
-.slide {
-    width: 25%;
-    height: 100%;
-    position: relative;
-    transition: 2s;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 22%;
-}
-
-
-.manual-navigation,
-.navigation-auto {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 16px;
-    display: flex;
-    gap: 16px;
-    width: auto;
-    margin: 0;
-}
-
-.manual-btn,
-.navigation-auto div {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 2px solid #fff;
     padding: 0;
     cursor: pointer;
     transition: .3s;
 }
 
-
-
 .manual-btn:hover {
     background-color: #fff;
 }
 
+/* Rádio → deslocamento */
 #radio1:checked~.first {
     margin-left: 0;
 }
@@ -758,6 +683,7 @@ header+.page-hero {
     margin-left: -75%;
 }
 
+/* Dot ativo */
 #radio1:checked~.navigation-auto .auto-btn1,
 #radio2:checked~.navigation-auto .auto-btn2,
 #radio3:checked~.navigation-auto .auto-btn3,
@@ -765,33 +691,28 @@ header+.page-hero {
     background-color: #fff;
 }
 
+/* Seção após o slider */
 .slider+.products {
     padding-top: calc(var(--sp-6) + var(--sp-3));
 }
 
-.products {
-    padding-bottom: calc(var(--sp-6) + var(--sp-3));
-}
-
-/* ---------------------------------------------------------
-   Responsividade
---------------------------------------------------------- */
-@media (max-width: 1200px) {
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width:1200px) {
     .container {
         width: 90%;
         margin: 0 auto;
     }
-
 }
 
-@media (max-width: 1024px) {
+@media (max-width:1024px) {
     .product-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 720px) {
-
+@media (max-width:720px) {
     :root {
         --nav-h: 64px;
     }
@@ -812,7 +733,6 @@ header+.page-hero {
         max-width: 440px;
     }
 
-
     .cart-box {
         grid-template-columns: 1fr;
     }
@@ -822,7 +742,7 @@ header+.page-hero {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width:550px) {
     #menu-icon {
         display: initial;
     }
@@ -858,8 +778,7 @@ header+.page-hero {
     }
 
     .hero-card-heading-wrapper {
-        padding:
-            clamp(var(--sp-3), 3.5vw, var(--sp-4)) clamp(var(--sp-3), 5vw, var(--sp-5)) calc(max(22px, env(safe-area-inset-bottom)) + 48px);
+        padding: clamp(var(--sp-3), 3.5vw, var(--sp-4)) clamp(var(--sp-3), 5vw, var(--sp-5)) calc(max(22px, env(safe-area-inset-bottom)) + 48px);
     }
 
     .hero-card-heading-title span {
@@ -875,10 +794,9 @@ header+.page-hero {
         min-height: 42px;
         padding: 0 var(--sp-4);
     }
-
 }
 
-@media (max-width: 420px) {
+@media (max-width:420px) {
     .product-container {
         grid-template-columns: 1fr;
     }
@@ -888,14 +806,13 @@ header+.page-hero {
     }
 }
 
-@media (max-width: 405px) {
+@media (max-width:405px) {
     .home-img img {
         max-width: 340px;
     }
 
     .hero-card-heading-decription span {
         max-width: 62ch;
-        /* ligeiro estreitamento pra evitar “espremer” */
     }
 
     .hero-card-heading-buttons {
@@ -906,21 +823,35 @@ header+.page-hero {
     .navigation-auto div {
         width: 8px;
         height: 8px;
-        /* dots um tiquinho menores */
     }
-
-
 }
 
-@media (min-width: 721px) and (max-width: 1024px) {
+@media (min-width:721px) and (max-width:1024px) {
     .slider {
         height: clamp(560px, 85vh, 900px);
     }
 }
 
-@supports (height: 100dvh) {
-    .slider {
-        /* entre 520px e (viewport cheio - header), com teto de 900px */
-        height: clamp(520px, calc(100dvh - var(--nav-h)), 900px);
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        transition: none;
     }
+
+    .hero-card-heading-buttons a {
+        transition: none;
+    }
+}
+
+/* =========================
+   STICKY FOOTER (apenas onde usar)
+   Use <body class="page-sticky-footer"> na página.
+========================= */
+.page-sticky-footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-sticky-footer .footer {
+    margin-top: auto;
 }

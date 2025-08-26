@@ -2,72 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Store</title>
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Link RemixIcons -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Store — Cart</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Headder -->
+<!-- Sticky footer só nesta página -->
+
+<body class="page-sticky-footer">
+    <!-- Header -->
     <header>
         <div class="nav container">
-            <!-- Menu Icon -->
-            <i class="ri-menu-line" id="menu-icon"></i>
+            <!-- Menu Icon (mobile) -->
+            <i class="ri-menu-line" id="menu-icon" aria-hidden="true"></i>
+
             <!-- Logo -->
             <a href="index.html" class="logo">Brand / Logo</a>
+
             <!-- Navbar -->
-            <div class="navbar">
+            <nav class="navbar" aria-label="primary">
                 <a href="masculino.html" class="nav-link">Masculino</a>
                 <a href="feminino.html" class="nav-link">Feminino</a>
                 <a href="infantil.html" class="nav-link">Infantil</a>
                 <a href="calcados.html" class="nav-link">Calçados</a>
                 <a href="acessorios.html" class="nav-link">Acessórios</a>
-            </div>
-            <!-- Search Bar -->
-            <!-- <div class="search-bar">
-                <input type="search" placeholder="Buscar produtos..." id="search" aria-label="Buscar" />
-                <i class="ri-search-line" aria-hidden="true"></i>
-            </div> -->
+            </nav>
+
             <!-- Cart Icon -->
-            <a href="#">
-                <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
+            <a href="cart.html" aria-label="Abrir carrinho">
+                <i class="ri-shopping-bag-line" id="cart-icon">
+                    <span id="cart-count">0</span>
+                </i>
             </a>
         </div>
     </header>
+
     <!-- Cart -->
-    <section class="cart-container container">
-        <a href="index.html" class="back-homepage">
-            <i class="ri-arrow-left-s-line"></i><span>Back to home</span> </a>
-        <h2 class="cart-s-title"> Shopping Cart </h2>
-        <div class="cart-box">
-            <div class="cart-data">
-                <div id="cartItems"> </div>
+    <main>
+        <section class="cart-container container">
+            <a href="index.html" class="back-homepage">
+                <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
+                <span>Back to home</span>
+            </a>
+
+            <h2 class="cart-s-title">Shopping Cart</h2>
+
+            <div class="cart-box">
+                <div class="cart-data">
+                    <div id="cartItems"></div>
+                </div>
+
+                <aside class="cart-t">
+                    <div id="cartTotal"></div>
+                    <a href="#" class="checkout-btn">Checkout</a>
+                </aside>
             </div>
-            <div class="cart-t">
-                <div id="cartTotal"></div>
-                <a href="#" class="checkout-btn">Checkout</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
+
     <!-- Footer -->
-    <div class="footer" id="footer">
+    <footer class="footer" id="footer">
         <div class="footer-c container">
             <div class="footer-box">
                 <h2>BRAND</h2>
                 <div class="social">
-                    <a href="#"><i class="ri-pinterest-line"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-facebook-line"></i></a>
-                    <a href="#"><i class="ri-whatsapp-line"></i></a>
-                    <a href="#"><i class="ri-youtube-line"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-line"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a>
                 </div>
             </div>
+
             <div class="footer-box">
-                <h3> Ajuda</h3>
+                <h3>Ajuda</h3>
                 <a href="#">Contato</a>
                 <a href="#">Faq</a>
                 <a href="#">Envio</a>
@@ -75,8 +89,9 @@
                 <a href="#">Rastreie seu Pedido</a>
                 <a href="#">Volte ao Pedido</a>
             </div>
+
             <div class="footer-box">
-                <h3> Legal Info</h3>
+                <h3>Legal Info</h3>
                 <a href="#">Política de Privacidade</a>
                 <a href="#">Termos e Condições</a>
                 <a href="#">Polítca de Devolução</a>
@@ -86,9 +101,9 @@
             </div>
         </div>
         <p class="copyright container">&#169; BRAND name</p>
-    </div>
+    </footer>
 
-    <!-- Link to JS -->
+    <!-- JS -->
     <script src="/js/main.js"></script>
     <script src="/js/menu.js"></script>
 </body>
