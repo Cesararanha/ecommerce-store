@@ -1,15 +1,25 @@
+// Simple auto-advance slider (8s). Works with inputs #radio1, #radio2, ...
 let count = 1;
-document.getElementById("radio1").checked = true;
+let maxSlides = 4; // default fallback
 
-setInterval(function () {
-    nextImage();
-}, 8000);
+function initSlider() {
+    const radios = Array.from(document.querySelectorAll('input[id^="radio"]'));
+    if (radios.length > 0) {
+        maxSlides = radios.length;
+        count = 1;
+        const first = document.getElementById("radio1");
+        if (first) first.checked = true;
+    }
+}
 
 function nextImage() {
-    count++;
-    if (count > 4) {
-        count = 1;
-    }
-    document.getElementById("radio" + count).checked = true;
-
+    count = count + 1;
+    if (count > maxSlides) count = 1;
+    const el = document.getElementById("radio" + count);
+    if (el) el.checked = true;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    initSlider();
+    setInterval(nextImage, 8000);
+});
