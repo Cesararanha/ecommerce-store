@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Brand — Brasil</title>
-    <meta name="description" content="Brand Brasil - Loja virtual" />
+    <title>Serenne Brasil</title>
+    <link rel="icon" href="/assets/images/logo_serenne.png" type="image/icon">
+    <meta name="description" content="Serenne Brasil - Loja virtual" />
     <meta name="theme-color" content="#111111" />
 
     <!-- CSS principal -->
@@ -25,7 +26,7 @@
             <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
 
             <!-- Logo -->
-            <a href="index.html" class="logo">Brand / Logo</a>
+            <a href="index.html" class="logo">Serenne</a>
 
             <!-- Navbar -->
             <nav id="primary-nav" class="navbar" aria-label="Categorias">
@@ -119,11 +120,95 @@
         <!-- =========================
          PRODUCTS
     ========================== -->
-        <section class="products container" id="products">
-            <h2 class="heading">Lançamentos</h2>
-            <div class="product-container" id="productList"></div>
+        <section class="products-container-home" id="products-home">
+            <!-- <h2 class="heading">Destaques</h2> -->
+            <div class="product-container-home" id="productHomeList">
+
+                <!-- Produto 1 -->
+                <div class="product-home">
+
+                    <img src="/assets/imagens_modelos/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__0.jpg"
+                        class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
+                    <div class="product-home-info">
+                        <h2 class="product-home-title">Minimalismo com sofisticação</h2>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-home">
+                    <img src="/assets/imagens_modelos/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__3.jpg"
+                        class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
+                    <div class="product-home-info">
+                        <h2 class="product-home-title">O Clássico Reinventado</h2>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-home">
+                    <img src="/assets/imagens_modelos/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_0.jpg"
+                        class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
+                    <div class="product-home-info">
+                        <h2 class="product-home-title">Elegância Atemporal</h2>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-home">
+                    <img src="/assets/imagens_modelos/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_1.jpg"
+                        class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
+                    <div class="product-home-info">
+                        <h2 class="product-home-title">Couro legítimo em design clássico</h2>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
+    <!-- =========================
+    NEWSLETTER + LOJAS
+========================= -->
+    <section id="prefooter-cta">
+        <div class="prefooter-wrap container">
+            <div class="prefooter-text">
+                <h2 class="prefooter-title">Fique por dentro</h2>
+                <p class="prefooter-sub">
+                    Encontre a loja mais próxima e assine a newsletter para receber lançamentos e novidades.
+                </p>
+            </div>
+
+            <div class="prefooter-forms">
+                <!-- Encontrar loja -->
+                <div class="pre-card">
+                    <h3 class="pre-card-title">ENCONTRAR UMA LOJA</h3>
+                    <p class="pre-card-desc">Insira uma localização para encontrar as lojas mais próximas</p>
+
+                    <form class="field" action="#" method="get">
+                        <label for="store-query" class="sr-only">Cidade ou CEP</label>
+                        <input id="store-query" name="q" type="text" placeholder="Cidade ou código postal">
+                        <span class="divider" aria-hidden="true"></span>
+                        <button class="icon-btn" type="submit" aria-label="Buscar lojas"><i
+                                class="ri-search-line"></i></button>
+                        <button class="icon-btn" type="button" aria-label="Usar minha localização"><i
+                                class="ri-crosshair-line"></i></button>
+                    </form>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="pre-card">
+                    <h3 class="pre-card-title">NEWSLETTER</h3>
+                    <p class="pre-card-desc">Inscreva-se para receber lançamentos e novidades</p>
+
+                    <form class="field" action="#" method="post" novalidate>
+                        <label for="newsletter-email" class="sr-only">E-mail</label>
+                        <input id="newsletter-email" name="email" type="email" inputmode="email" placeholder="E-mail"
+                            required>
+                        <button class="text-btn" type="submit" aria-label="Enviar e-mail">OK</button>
+                        <i class="ri-arrow-right-s-line chevron" aria-hidden="true"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- =========================
        FOOTER
@@ -131,37 +216,38 @@
     <footer class="footer" id="footer">
         <div class="footer-c container">
             <div class="footer-box">
-                <h2>BRAND</h2>
+                <h2>Serenne</h2>
                 <div class="social">
-                    <a href="#"><i class="ri-pinterest-line"></i></a>
-                    <a href="#"><i class="ri-instagram-line"></i></a>
-                    <a href="#"><i class="ri-facebook-line"></i></a>
-                    <a href="#"><i class="ri-whatsapp-line"></i></a>
-                    <a href="#"><i class="ri-youtube-line"></i></a>
+                    <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
+                    <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
+                    <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
+                    <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
                 </div>
             </div>
 
             <div class="footer-box">
                 <h3>Ajuda</h3>
-                <a href="#">Contato</a>
-                <a href="#">Faq</a>
-                <a href="#">Envio</a>
-                <a href="#">Pagamento</a>
-                <a href="#">Rastreie seu Pedido</a>
-                <a href="#">Volte ao Pedido</a>
+                <a href="#">Contatos</a>
+                <a href="#">FAQ</a>
+                <a href="#">Acompanhe seu pedido</a>
+                <a href="#">Métodos de pagamento</a>
+                <a href="#">Devolução</a>
+                <a href="#">Trabalhe conosco</a>
             </div>
 
             <div class="footer-box">
-                <h3>Legal Info</h3>
+                <h3>Legal e Privacidade</h3>
+                <a href="#">Aiso legal</a>
                 <a href="#">Política de Privacidade</a>
-                <a href="#">Termos e Condições</a>
-                <a href="#">Polítca de Devolução</a>
-                <a href="#">Pagamento</a>
+                <a href="#">Termos e condições</a>
+                <a href="#">Polítca de devolução</a>
+                <a href="#">Termos de venda</a>
                 <a href="#">Comunidade</a>
-                <a href="#">Cartão</a>
+
             </div>
         </div>
-        <p class="copyright container">&#169; BRAND name</p>
+        <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
     </footer>
 
     <!-- Scripts -->
