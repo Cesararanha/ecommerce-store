@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce Store — Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrinho — Brand Brasil</title>
+    <meta name="description" content="Carrinho de compras da Brand Brasil - Loja virtual" />
+    <meta name="theme-color" content="#111111" />
 
-    <!-- CSS -->
+    <!-- CSS principal -->
     <link rel="stylesheet" href="/css/style.css" />
 
     <!-- Remix Icons -->
@@ -16,17 +18,19 @@
 <!-- Sticky footer só nesta página -->
 
 <body class="page-sticky-footer">
-    <!-- Header -->
+    <!-- =========================
+           HEADER (replicado do index)
+      ========================== -->
     <header>
         <div class="nav container">
-            <!-- Menu Icon (mobile) -->
-            <i class="ri-menu-line" id="menu-icon" aria-hidden="true"></i>
+            <!-- Menu (mobile) -->
+            <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
 
             <!-- Logo -->
             <a href="index.html" class="logo">Brand / Logo</a>
 
             <!-- Navbar -->
-            <nav class="navbar" aria-label="primary">
+            <nav id="primary-nav" class="navbar" aria-label="Categorias">
                 <a href="masculino.html" class="nav-link">Masculino</a>
                 <a href="feminino.html" class="nav-link">Feminino</a>
                 <a href="infantil.html" class="nav-link">Infantil</a>
@@ -34,7 +38,7 @@
                 <a href="acessorios.html" class="nav-link">Acessórios</a>
             </nav>
 
-            <!-- Cart Icon -->
+            <!-- Carrinho -->
             <a href="cart.html" aria-label="Abrir carrinho">
                 <i class="ri-shopping-bag-line" id="cart-icon">
                     <span id="cart-count">0</span>
@@ -43,15 +47,17 @@
         </div>
     </header>
 
-    <!-- Cart -->
+    <!-- =========================
+           CART
+      ========================== -->
     <main>
         <section class="cart-container container">
             <a href="index.html" class="back-homepage">
                 <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
-                <span>Back to home</span>
+                <span>Voltar à página inicial</span>
             </a>
 
-            <h2 class="cart-s-title">Shopping Cart</h2>
+            <h2 class="cart-s-title">Carrinho de Compras</h2>
 
             <div class="cart-box">
                 <div class="cart-data">
@@ -60,13 +66,15 @@
 
                 <aside class="cart-t">
                     <div id="cartTotal"></div>
-                    <a href="#" class="checkout-btn">Checkout</a>
+                    <a href="#" class="checkout-btn">Finalizar Compra</a>
                 </aside>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- =========================
+           FOOTER (replicado do index)
+      ========================== -->
     <footer class="footer" id="footer">
         <div class="footer-c container">
             <div class="footer-box">
@@ -103,8 +111,9 @@
         <p class="copyright container">&#169; BRAND name</p>
     </footer>
 
-    <!-- JS -->
+    <!-- Scripts (mantidos como no index) -->
     <script src="/js/main.js"></script>
+    <script src="/js/slider.js"></script>
     <script src="/js/menu.js"></script>
 </body>
 

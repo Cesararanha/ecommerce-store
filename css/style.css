@@ -72,6 +72,15 @@ section {
     padding: var(--sp-6) 0 var(--sp-5);
 }
 
+/* Focus visível para acessibilidade */
+a:focus-visible,
+button:focus-visible,
+.nav-link:focus-visible,
+.add-to-cart:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
 /* =========================
    HEADER / NAV
 ========================= */
@@ -170,26 +179,37 @@ header+.page-hero {
     margin-top: var(--nav-h);
 }
 
-/* respiro sob o header fixo */
+/* =========================
+   BREADCRUMBS + TITLES (NOVO)
+========================= */
+.page-title {
+    font-family: var(--ff-heading);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: 2.25rem;
+    margin: var(--sp-3) 0 var(--sp-4);
+}
 
-/* opcional: seção home simples */
-.home {
-    position: relative;
-    min-height: 64vh;
-    background: var(--bg);
+.breadcrumbs {
     display: flex;
     align-items: center;
+    gap: .5rem;
+    color: var(--muted);
+    font-size: .95rem;
 }
 
-.home-img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.breadcrumbs a {
+    color: var(--muted);
+    border-bottom: 1px solid transparent;
 }
 
-.home-img img {
-    max-width: 560px;
-    width: 100%;
+.breadcrumbs a:hover {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.breadcrumbs span {
+    color: var(--muted);
 }
 
 /* =========================
@@ -280,6 +300,11 @@ header+.page-hero {
     border-color: var(--text);
 }
 
+.add-to-cart:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
 /* =========================
    CART
 ========================= */
@@ -301,6 +326,10 @@ header+.page-hero {
 .back-homepage span {
     font-size: .95rem;
     font-weight: 600;
+}
+
+.back-homepage:hover {
+    color: var(--text);
 }
 
 .cart-s-title {
@@ -417,6 +446,10 @@ header+.page-hero {
     font-weight: 600;
 }
 
+.checkout-btn:hover {
+    filter: brightness(1.1);
+}
+
 /* =========================
    TOASTS
 ========================= */
@@ -489,6 +522,10 @@ header+.page-hero {
     color: #ddd;
     font-size: .95rem;
     margin-bottom: .5rem;
+}
+
+.footer-box a:hover {
+    color: #fff;
 }
 
 .social {
@@ -721,6 +758,14 @@ header+.page-hero {
         height: 64px;
     }
 
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .breadcrumbs {
+        font-size: .9rem;
+    }
+
     .product-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -739,6 +784,13 @@ header+.page-hero {
 
     .footer-c {
         grid-template-columns: 1fr;
+    }
+
+    /* Toasts no mobile */
+    .toast-container {
+        top: auto;
+        right: 16px;
+        bottom: 16px;
     }
 }
 

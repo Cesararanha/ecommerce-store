@@ -1,115 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce Store</title>
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Link RemixIcons -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Infantil — Brand Brasil</title>
+    <meta name="description" content="Coleção Infantil da Brand Brasil - Loja virtual" />
+    <meta name="theme-color" content="#111111" />
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- =========================
+           HEADER (replicado do index)
+      ========================== -->
     <header>
         <div class="nav container">
-            <!-- Menu Icon -->
-            <i class="ri-menu-line" id="menu-icon"></i>
+            <!-- Menu (mobile) -->
+            <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
+
             <!-- Logo -->
             <a href="index.html" class="logo">Brand / Logo</a>
+
             <!-- Navbar -->
-            <div class="navbar">
+            <nav id="primary-nav" class="navbar" aria-label="Categorias">
                 <a href="masculino.html" class="nav-link">Masculino</a>
                 <a href="feminino.html" class="nav-link">Feminino</a>
-                <a href="#" class="nav-link">Infantil</a>
+                <a href="infantil.html" class="nav-link active" aria-current="page">Infantil</a>
                 <a href="calcados.html" class="nav-link">Calçados</a>
                 <a href="acessorios.html" class="nav-link">Acessórios</a>
-            </div>
-            <!-- Search Bar -->
-            <!-- <div class="search-bar">
-                <input type="search" placeholder="Buscar produtos..." id="search" aria-label="Buscar" />
-                <i class="ri-search-line" aria-hidden="true"></i>
-            </div> -->
-            <!-- Cart Icon -->
-            <a href="cart.html">
-                <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
+            </nav>
+
+            <!-- Carrinho -->
+            <a href="cart.html" aria-label="Abrir carrinho">
+                <i class="ri-shopping-bag-line" id="cart-icon">
+                    <span id="cart-count">0</span>
+                </i>
             </a>
         </div>
     </header>
-    <section class="page-hero">
-        <div class="container">
-            <nav class="breadcrumbs">
-                <a href="index.html">Início</a>
-                <span>›</span>
-                <span>Infantil</span>
-            </nav>
-            <h1 class="page-title">Infantil</h1>
-            <!-- <p class="page-subtitle">Vestidos, blusas, saias e mais</p> -->
-        </div>
-    </section>
-    <!--Products-->
-    <!--Products-->
-    <section class="products container" id="products">
-        <!-- Heading -->
-        <!-- <h2 class="heading">Destaques</h2> -->
-        <div class="product-container" id="productList">
-            <div class="product">
-                <img src="/assets/imagens_modelos/infantil/classic white shirt/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
-                    class="product-img" alt="product">
-                <div class="product-info">
-                    <h2 class="product-title"> White Satin Blouse</h2>
-                    <p class="product-price"> $68</p>
-                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                        Add to cart</a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-                    class="product-img" alt="product">
-                <div class="product-info">
-                    <h2 class="product-title"> Black Hoodie</h2>
-                    <p class="product-price"> $98</p>
-                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                        Add to cart</a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1.jpg"
-                    class="product-img" alt="product">
-                <div class="product-info">
-                    <h2 class="product-title">Beige Hoodie</h2>
-                    <p class="product-price"> $98</p>
-                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                        Add to cart</a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3.jpg"
-                    class="product-img" alt="product">
-                <div class="product-info">
-                    <h2 class="product-title">Gray Hoodie</h2>
-                    <p class="product-price"> $98</p>
-                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                        Add to cart</a>
-                </div>
-            </div>
-            <div class="product">
-                <img src="/assets/imagens_modelos/infantil/pastel cotton dress/Lucid_Realism_exquisite_high_fashion_photography_of_a_fullbody_0.jpg"
-                    class="product-img" alt="product">
-                <div class="product-info">
-                    <h2 class="product-title">Cotton Dress</h2>
-                    <p class="product-price"> $238</p>
-                    <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">
-                        Add to cart</a>
-                </div>
-            </div>
 
-        </div>
-    </section>
+    <main>
+        <!-- =========================
+            HERO / BREADCRUMBS (padrão simples)
+        ========================== -->
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Trilha de navegação">
+                    <a href="index.html">Início</a>
+                    <span aria-hidden="true">›</span>
+                    <span>Infantil</span>
+                </nav>
+                <h1 class="page-title">Infantil</h1>
+                <!-- <p class="page-subtitle">Roupas confortáveis e estilosas para crianças</p> -->
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <div class="footer" id="footer">
+        <!-- =========================
+             PRODUCTS
+        ========================== -->
+        <section class="products container" id="products">
+            <!-- <h2 class="heading">Destaques</h2> -->
+            <div class="product-container" id="productList">
+
+                <!-- Produto 1 -->
+                <div class="product">
+                    <img src="/assets/imagens_modelos/infantil/classic white shirt/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
+                        class="product-img" alt="Camisa branca infantil clássica" loading="lazy" decoding="async">
+                    <div class="product-info">
+                        <h2 class="product-title">White Satin Blouse</h2>
+                        <p class="product-price">$68</p>
+                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
+                            carrinho</a>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product">
+                    <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
+                        class="product-img" alt="Moletom infantil preto minimalista" loading="lazy" decoding="async">
+                    <div class="product-info">
+                        <h2 class="product-title">Black Hoodie</h2>
+                        <p class="product-price">$98</p>
+                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
+                            carrinho</a>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product">
+                    <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1.jpg"
+                        class="product-img" alt="Moletom infantil bege" loading="lazy" decoding="async">
+                    <div class="product-info">
+                        <h2 class="product-title">Beige Hoodie</h2>
+                        <p class="product-price">$98</p>
+                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
+                            carrinho</a>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product">
+                    <img src="/assets/imagens_modelos/infantil/minimalist hoodie/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3.jpg"
+                        class="product-img" alt="Moletom infantil cinza" loading="lazy" decoding="async">
+                    <div class="product-info">
+                        <h2 class="product-title">Gray Hoodie</h2>
+                        <p class="product-price">$98</p>
+                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
+                            carrinho</a>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product">
+                    <img src="/assets/imagens_modelos/infantil/pastel cotton dress/Lucid_Realism_exquisite_high_fashion_photography_of_a_fullbody_0.jpg"
+                        class="product-img" alt="Vestido infantil de algodão em tons pastel" loading="lazy"
+                        decoding="async">
+                    <div class="product-info">
+                        <h2 class="product-title">Cotton Dress</h2>
+                        <p class="product-price">$238</p>
+                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
+                            carrinho</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================
+           FOOTER (replicado do index)
+      ========================== -->
+    <footer class="footer" id="footer">
         <div class="footer-c container">
             <div class="footer-box">
                 <h2>BRAND</h2>
@@ -121,8 +148,9 @@
                     <a href="#"><i class="ri-youtube-line"></i></a>
                 </div>
             </div>
+
             <div class="footer-box">
-                <h3> Ajuda</h3>
+                <h3>Ajuda</h3>
                 <a href="#">Contato</a>
                 <a href="#">Faq</a>
                 <a href="#">Envio</a>
@@ -130,8 +158,9 @@
                 <a href="#">Rastreie seu Pedido</a>
                 <a href="#">Volte ao Pedido</a>
             </div>
+
             <div class="footer-box">
-                <h3> Legal Info</h3>
+                <h3>Legal Info</h3>
                 <a href="#">Política de Privacidade</a>
                 <a href="#">Termos e Condições</a>
                 <a href="#">Polítca de Devolução</a>
@@ -141,10 +170,14 @@
             </div>
         </div>
         <p class="copyright container">&#169; BRAND name</p>
-    </div>
+    </footer>
 
+    <!-- Scripts (mantidos como no index) -->
     <script src="/js/main.js"></script>
+    <script src="/js/slider.js"></script>
     <script src="/js/menu.js"></script>
+
+    <!-- Dica: a função addToCart(produtoEl) é esperada no main.js -->
 </body>
 
 </html>
