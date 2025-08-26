@@ -1,151 +1,157 @@
-// Cart
+// Cart state
 let cartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
 
-// Add to cart
-function addToCart(productCard) {
-    const name = productCard.querySelector(".product-title").textContent;
-    const priceText = productCard.querySelector(".product-price").textContent;
-    const price = parseFloat(priceText.replace("$", ""));
-    const imgSrc = productCard.querySelector(".product-img").src;
-
-    const existingItem = cartItems.find((item) => item.name === name);
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cartItems.push({
-            name,
-            price,
-            quantity: 1,
-            image: imgSrc,
-        })
-    }
-    updateLocalStorage();
-    updateCartCount();
-    showToast(`${name} added to cart`);
-    if (document.getElementById("cartItems")) {
-        displayCartItems();
-    }
+/** Persist cartItems to localStorage. */
+function updateLocalStorage() {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-// Remove from cart
-function removeItem(name) {
-    cartItems = cartItems.filter((item) => item.name !== name);
-    updateLocalStorage();
-    updateCartCount();
-    if (document.getElementById("cartItems")) {
-        displayCartItems();
-    }
-}
-
-// Update cart count icon
+/** Update the cart count badge (#cart-count), if present. */
 function updateCartCount() {
-    const countElement = document.getElementById("cart-count");
-    const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
-    if (countElement) {
-        countElement.textContent = itemCount;
-    }
+    const count = cartItems.reduce((sum, it) => sum + (it.quantity || 0), 0);
+    const badge = document.getElementById("cart-count");
+    if (badge) badge.textContent = String(count);
 }
 
+/**
+ * Render cart items inside #cartItems and total in #cartTotal.
+ * Markup follows the classes expected by style.css (no visual changes intended).
+ */
 function displayCartItems() {
-    const cartContainer = document.getElementById("cartItems")
+    const cartContainer = document.getElementById("cartItems");
     const totalElement = document.getElementById("cartTotal");
-
-    if (!cartContainer) { return }
+    if (!cartContainer) return;
 
     cartContainer.innerHTML = "";
     let total = 0;
 
     cartItems.forEach((item) => {
-        const itemTotal = item.price * item.quantity;
+        const itemTotal = Number(item.price) * Number(item.quantity);
         total += itemTotal;
-        const cartItem = document.createElement("div");
-        cartItem.className = "cart-item";
-        cartItem.innerHTML = `<img src="${item.image}" alt="${item.name}">
-            <div class="cart-title-price">
-                <div class="cart-item-title">${item.name}</div>
-                <div class="cart-item-price">$${itemTotal.toFixed(2)}</div>
-            </div>
-            <div class="quantity-controls">
-                <button onclick="changeQuantity('${item.name}', -1)">
-                    <i class="ri-subtract-line"></i>
-                </button>
-                <input type="text" name="" class="cart-item-quantity" value="${item.quantity}" min="1"
-                    onchange="updateQuantity('${item.name}', this.value)" readonly>
-                    <button onclick="changeQuantity('${item.name}', +1)">
-                        <i class="ri-add-line"></i>
-                    </button>
-            </div>
-            <div class="remove-from-cart" onclick="removeItem('${item.name}')">
-                <i class="ri-delete-bin-line"></i>
-            </div>`;
-        cartContainer.appendChild(cartItem);
 
-    })
-    if (totalElement) {
-        totalElement.textContent = `Total: $${total.toFixed(2)}`;
+        const el = document.createElement("div");
+        el.className = "cart-item";
+
+        // Quantity control (readonly input; UI changes via +/- only)
+        const qtyHtml = `
+      <div class="quantity-controls">
+        <button aria-label="Decrease quantity" onclick="changeQuantity('${item.name.replace(/'/g, "\\'")}', -1)">-</button>
+        <input type="text" value="${item.quantity}" readonly />
+        <button aria-label="Increase quantity" onclick="changeQuantity('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
+      </div>
+    `;
+
+        const removeHtml = `<i class="ri-delete-bin-6-line remove-from-cart" aria-label="Remove ${item.name}" role="button" onclick="removeItem('${item.name.replace(/'/g, "\\'")}')"></i>`;
+
+        el.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-title-price">
+        <div class="cart-item-title">${item.name}</div>
+        <div class="cart-item-price">$${Number(item.price).toFixed(2)}</div>
+      </div>
+      ${qtyHtml}
+      ${removeHtml}
+    `;
+
+        cartContainer.appendChild(el);
+    });
+
+    if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
+}
+
+/**
+ * Add a product to the cart.
+ * Reads .product-title, .product-price, .product-img within the product card.
+ * Displays as-is; internal numeric parsing is tolerant to $/R$ and separators.
+ */
+function addToCart(productCard) {
+    const name = productCard.querySelector(".product-title")?.textContent?.trim() || "";
+    const priceText = productCard.querySelector(".product-price")?.textContent?.trim() || "$0";
+    const imgSrc = productCard.querySelector(".product-img")?.src || "";
+
+    // Robust parse: keep digits, comma, dot; normalize comma to dot and strip thousand separators.
+    const normalized = priceText.replace(/[^\d.,-]/g, "").replace(/\.(?=\d{3}\b)/g, "").replace(",", ".");
+    const price = parseFloat(normalized) || 0;
+
+    const existing = cartItems.find((it) => it.name === name);
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cartItems.push({ name, price, image: imgSrc, quantity: 1 });
     }
-}
 
-// Quantity Change
-function changeQuantity(name, delta) {
-    const item = cartItems.find((item) => item.name === name);
-    if (item) {
-        item.quantity += delta;
-        if (item.quantity <= 0) {
-            removeItem(name);
-        } else {
-            updateLocalStorage();
-            updateCartCount();
-            displayCartItems();
-        }
-    }
-}
-
-
-// Save cart in Localstorage
-function updateLocalStorage() {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-}
-
-// Load cart on page Load
-window.onload = function () {
+    updateLocalStorage();
     updateCartCount();
-    if (document.getElementById("cartItems")) {
-        displayCartItems()
-    }
-    createToastContainer();
+    showToast(`${name} added to cart`);
+    if (document.getElementById("cartItems")) displayCartItems();
 }
 
-// Toast Notification 
+/** Remove an item by name. */
+function removeItem(name) {
+    cartItems = cartItems.filter((it) => it.name !== name);
+    updateLocalStorage();
+    updateCartCount();
+    if (document.getElementById("cartItems")) displayCartItems();
+}
+
+/** Increment/decrement quantity by delta (min 1). */
+function changeQuantity(name, delta) {
+    const item = cartItems.find((it) => it.name === name);
+    if (!item) return;
+    const next = Math.max(1, (item.quantity || 1) + delta);
+    if (next !== item.quantity) {
+        item.quantity = next;
+        updateLocalStorage();
+        updateCartCount();
+        if (document.getElementById("cartItems")) displayCartItems();
+    }
+}
+
+/**
+ * Update quantity from direct input change (kept for completeness).
+ * Input is readonly by default; if enabled later, this stays safe.
+ */
+function updateQuantity(name, rawValue) {
+    const item = cartItems.find((it) => it.name === name);
+    if (!item) return;
+    let next = parseInt(String(rawValue).replace(/[^\d]/g, ""), 10);
+    if (Number.isNaN(next)) next = item.quantity;
+    next = Math.max(1, Math.min(next, 999));
+    if (next !== item.quantity) {
+        item.quantity = next;
+        updateLocalStorage();
+        updateCartCount();
+        if (document.getElementById("cartItems")) displayCartItems();
+    }
+}
+
+/** Toast container bootstrap. */
 function createToastContainer() {
     if (document.getElementById("toast-container")) return;
-
     const toastContainer = document.createElement("div");
     toastContainer.id = "toast-container";
     toastContainer.className = "toast-container";
     document.body.appendChild(toastContainer);
 }
 
+/** Simple toast. */
 function showToast(message) {
+    createToastContainer();
     const toast = document.createElement("div");
     toast.className = "toast";
     toast.textContent = message;
-
     const container = document.getElementById("toast-container");
     container.appendChild(toast);
-
-    // Show Animation
-    setTimeout(() => {
-        toast.classList.add("toast-show");
-    }, 100);
-
-    // Remove after
+    setTimeout(() => toast.classList.add("toast-show"), 100);
     setTimeout(() => {
         toast.classList.remove("toast-show");
-        setTimeout(() => {
-            if (container.contains(toast)) {
-                container.removeChild(toast)
-            }
-        }, 300);
+        setTimeout(() => { if (container.contains(toast)) container.removeChild(toast); }, 300);
     }, 3000);
 }
+
+// Init
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+    if (document.getElementById("cartItems")) displayCartItems();
+    createToastContainer();
+});
