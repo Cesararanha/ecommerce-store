@@ -37,11 +37,6 @@ Baixe/clona este repositório
 
 Abra o index.html no navegador ou rode um servidor local, por exemplo:
 
-# Python
-python -m http.server 8080
-
-
-Acesse http://localhost:8080
 
 👨‍🎓 Observação
 
