@@ -21,5 +21,5 @@ function nextImage() {
 
 document.addEventListener("DOMContentLoaded", () => {
     initSlider();
-    setInterval(nextImage, 8000);
+    setInterval(nextImage, 4000);
 });
