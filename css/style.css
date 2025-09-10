@@ -142,12 +142,39 @@ header {
     border-color: var(--text);
 }
 
-#cart-icon {
-    position: relative;
-    font-size: 1.4rem;
-    color: var(--text);
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
 }
 
+/* Links dos ícones  */
+.nav-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícones */
+#user-icon,
+#cart-icon {
+    font-size: 1.4rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+#user-icon:hover,
+#cart-icon:hover {
+    opacity: .8;
+}
+
+#cart-icon {
+    position: relative;
+}
+
+/* Badge do carrinho */
 #cart-count {
     position: absolute;
     right: -8px;
@@ -177,7 +204,7 @@ header {
     margin-top: 0;
 }
 
-header+.page-hero {
+header+main .page-hero {
     margin-top: var(--nav-h);
 }
 
