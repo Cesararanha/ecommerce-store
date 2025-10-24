@@ -1,135 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalhe do Pedido</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/account.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhe do Pedido</title>
 
-    <!-- Remix Icons (necessário para os ícones do header) -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/account.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-  <body>
-    <!-- =========================
-         HEADER
-  ========================== -->
-    <header>
-      <div class="nav container">
-        <i
-          class="ri-menu-line"
-          id="menu-icon"
-          aria-label="Abrir menu"
-          aria-controls="primary-nav"
-        ></i>
-        <a href="/index.html" class="logo">Serenne</a>
+  <!-- Remix Icons (necessário para os ícones do header) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
 
-        <nav id="primary-nav" class="navbar" aria-label="Categorias">
-          <a href="/html/masculino.html" class="nav-link">Masculino</a>
-          <a href="/html/feminino.html" class="nav-link">Feminino</a>
-          <a href="/html/infantil.html" class="nav-link">Infantil</a>
-          <a href="/html/calcados.html" class="nav-link">Calçados</a>
-          <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
-          <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
-        </nav>
+<body>
+  <header>
+    <div class="nav container">
+      <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
+      <a href="/index.html" class="logo">Serenne</a>
 
-        <div class="nav-icons">
-          <a
-            href="/html/perfil.html"
-            data-profile-trigger
-            aria-label="Minha conta"
-          >
-            <i class="ri-user-line" id="user-icon"></i>
-          </a>
-          <a href="/html/cart.html" aria-label="Abrir carrinho">
-            <i class="ri-shopping-bag-line" id="cart-icon">
-              <span id="cart-count">0</span>
-            </i>
-          </a>
+      <nav id="primary-nav" class="navbar" aria-label="Categorias">
+        <a href="/html/masculino.html" class="nav-link">Masculino</a>
+        <a href="/html/feminino.html" class="nav-link">Feminino</a>
+        <a href="/html/infantil.html" class="nav-link">Infantil</a>
+        <a href="/html/calcados.html" class="nav-link">Calçados</a>
+        <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
+      </nav>
+
+      <div class="nav-icons">
+        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
+          <i class="ri-user-line" id="user-icon"></i>
+        </a>
+        <a href="/html/cart.html" aria-label="Abrir carrinho">
+          <i class="ri-shopping-bag-line" id="cart-icon">
+            <span id="cart-count">0</span>
+          </i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Detalhe do Pedido</h1>
+    <div class="order-detail">
+      <!-- preenchido via /js/order-detail.js -->
+    </div>
+    <p>
+      <a href="/html/pedidos.html" class="btn-back">← Voltar para Meus Pedidos</a>
+    </p>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-c container">
+      <div class="footer-box">
+        <h2>Serenne</h2>
+        <div class="social">
+          <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
+          <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+          <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
+          <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
+          <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
         </div>
       </div>
-    </header>
 
-    <!-- =========================
-         CONTEÚDO
-  ========================== -->
-    <main class="container">
-      <h1>Detalhe do Pedido</h1>
-      <div class="order-detail">
-        <!-- preenchido via /js/order-detail.js -->
+      <div class="footer-box">
+        <h3>Ajuda</h3>
+        <a href="#">Contatos</a>
+        <a href="#">FAQ</a>
+        <a href="#">Acompanhe seu pedido</a>
+        <a href="#">Métodos de pagamento</a>
+        <a href="#">Devolução</a>
+        <a href="#">Trabalhe conosco</a>
       </div>
-      <p>
-        <a href="/html/pedidos.html" class="btn-back"
-          >← Voltar para Meus Pedidos</a
-        >
-      </p>
-    </main>
 
-    <!-- =========================
-         FOOTER
-  ========================== -->
-    <footer class="footer" id="footer">
-      <div class="footer-c container">
-        <div class="footer-box">
-          <h2>Serenne</h2>
-          <div class="social">
-            <a href="https://br.pinterest.com"
-              ><i class="ri-pinterest-line"></i
-            ></a>
-            <a href="https://www.instagram.com"
-              ><i class="ri-instagram-line"></i
-            ></a>
-            <a href="https://www.facebook.com"
-              ><i class="ri-facebook-line"></i
-            ></a>
-            <a href="https://www.whatsapp.com/?lang=pt_BR"
-              ><i class="ri-whatsapp-line"></i
-            ></a>
-            <a href="https://www.youtube.com"
-              ><i class="ri-youtube-line"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer-box">
-          <h3>Ajuda</h3>
-          <a href="#">Contatos</a>
-          <a href="#">FAQ</a>
-          <a href="#">Acompanhe seu pedido</a>
-          <a href="#">Métodos de pagamento</a>
-          <a href="#">Devolução</a>
-          <a href="#">Trabalhe conosco</a>
-        </div>
-
-        <div class="footer-box">
-          <h3>Legal e Privacidade</h3>
-          <a href="#">Aviso legal</a>
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos e condições</a>
-          <a href="#">Política de devolução</a>
-          <a href="#">Termos de venda</a>
-          <a href="#">Comunidade</a>
-        </div>
+      <div class="footer-box">
+        <h3>Legal e Privacidade</h3>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos e condições</a>
+        <a href="#">Política de devolução</a>
+        <a href="#">Termos de venda</a>
+        <a href="#">Comunidade</a>
       </div>
-      <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
-    </footer>
+    </div>
+    <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
+  </footer>
 
-    <!-- =========================
-         SCRIPTS (ordem importa)
-  ========================== -->
-    <script src="/js/main.js"></script>
-    <script src="/js/menu.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/order-detail.js"></script>
+  <script src="/js/notify.js"></script>
+  <script src="/js/user-popover.js"></script>
+</body>
 
-    <!-- Dados / lógica da loja -->
-    <script src="/js/storage.js"></script>
-    <script src="/js/order-detail.js"></script>
-    <script src="/js/notify.js"></script>
-    <script src="/js/user-popover.js"></script>
-  </body>
 </html>

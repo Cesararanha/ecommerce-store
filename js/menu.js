@@ -1,4 +1,3 @@
-// Mobile menu toggle and a11y helpers
 const navbar = document.querySelector(".navbar");
 const menuBtn = document.querySelector("#menu-icon");
 
@@ -23,9 +22,7 @@ function toggleMenu() {
   isOpen() ? closeMenu() : openMenu();
 }
 
-// Toggle by button
 if (menuBtn) {
-  // Initialize state for screen readers
   if (!menuBtn.hasAttribute("aria-expanded")) {
     menuBtn.setAttribute("aria-expanded", "false");
   }
@@ -35,14 +32,12 @@ if (menuBtn) {
   });
 }
 
-// Close with Escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && isOpen()) {
     closeMenu();
   }
 });
 
-// Close when clicking outside the navbar
 document.addEventListener("click", (e) => {
   if (!isOpen()) return;
   const target = e.target;
@@ -50,7 +45,6 @@ document.addEventListener("click", (e) => {
   if (navbar && !navbar.contains(target)) closeMenu();
 });
 
-// Close after clicking a nav link
 if (navbar) {
   navbar.addEventListener("click", (e) => {
     const link = e.target.closest("a");

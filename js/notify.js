@@ -1,4 +1,3 @@
-// /js/notify.js
 (function () {
   const RIC = (name) => `<i class="ri-${name}"></i>`;
   const icons = {
@@ -26,8 +25,8 @@
     el.className = `notify-toast ${type}`;
     el.innerHTML = `
       <span class="icon" aria-hidden="true">${RIC(
-        icons[type] || icons.info
-      )}</span>
+      icons[type] || icons.info
+    )}</span>
       <span class="msg">${message}</span>
       <button class="close" aria-label="Fechar">${RIC("close-line")}</button>
     `;
@@ -67,13 +66,12 @@
         <p>${message}</p>
         <div class="notify-actions">
           ${actions
-            .map(
-              (a, i) =>
-                `<button class="notify-btn ${
-                  a.secondary ? "secondary" : ""
-                }" data-i="${i}">${a.label}</button>`
-            )
-            .join("")}
+          .map(
+            (a, i) =>
+              `<button class="notify-btn ${a.secondary ? "secondary" : ""
+              }" data-i="${i}">${a.label}</button>`
+          )
+          .join("")}
         </div>`;
       const buttons = m.querySelectorAll(".notify-btn");
       const close = (val) => {
@@ -94,7 +92,6 @@
       buttons.forEach((b, i) =>
         b.addEventListener("click", () => close(actions[i].value))
       );
-      // foco no primeiro botão
       buttons[0]?.focus();
     });
   }
@@ -120,7 +117,6 @@
     return modal({ title, message, actions: [{ label: okText, value: true }] });
   }
 
-  // Flash pós-redirect
   const FLASH_KEY = "serenne:flash";
   function flash(message, type = "info") {
     localStorage.setItem(FLASH_KEY, JSON.stringify({ message, type }));
@@ -132,7 +128,7 @@
       localStorage.removeItem(FLASH_KEY);
       const { message, type } = JSON.parse(raw);
       toast(message, type);
-    } catch {}
+    } catch { }
   }
   document.addEventListener("DOMContentLoaded", showFlash);
 
@@ -146,6 +142,5 @@
     alert: alertModal,
     flash,
   };
-  // atalho global curto
   window.$msg = window.Notify;
 })();

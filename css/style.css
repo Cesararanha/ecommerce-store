@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
-/* =========================
-   TOKENS / DESIGN SYSTEM
-========================= */
 :root {
   --bg: #f7f5f0;
   --surface: #ffffff;
@@ -26,9 +23,6 @@
   --nav-h: 72px;
 }
 
-/* =========================
-   BASE
-========================= */
 * {
   box-sizing: border-box;
 }
@@ -39,7 +33,6 @@ body {
 }
 
 html {
-  /* corta overflow horizontal sem afetar scroll vertical */
   overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
@@ -74,7 +67,6 @@ section {
   padding: var(--sp-6) 0 var(--sp-5);
 }
 
-/* Focus visível */
 a:focus-visible,
 button:focus-visible,
 .nav-link:focus-visible,
@@ -83,9 +75,6 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* =========================
-   HEADER / NAV
-========================= */
 header {
   position: fixed;
   top: 0;
@@ -148,14 +137,12 @@ header {
   gap: var(--sp-2);
 }
 
-/* Links dos ícones  */
 .nav-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Ícones */
 #user-icon,
 #cart-icon {
   font-size: 1.4rem;
@@ -173,7 +160,6 @@ header {
   position: relative;
 }
 
-/* Badge do carrinho */
 #cart-count {
   position: absolute;
   right: -8px;
@@ -189,7 +175,6 @@ header {
   justify-content: center;
 }
 
-/* páginas internas */
 [id] {
   scroll-margin-top: calc(var(--nav-h) + 12px);
 }
@@ -203,13 +188,10 @@ header {
   margin-top: 0;
 }
 
-header + main .page-hero {
+header+main .page-hero {
   margin-top: var(--nav-h);
 }
 
-/* =========================
-   BREADCRUMBS + TITLES
-========================= */
 .page-title {
   font-family: var(--ff-heading);
   text-transform: uppercase;
@@ -240,9 +222,6 @@ header + main .page-hero {
   color: var(--muted);
 }
 
-/* =========================
-   HEADINGS
-========================= */
 .heading {
   font-family: var(--ff-heading);
   text-transform: uppercase;
@@ -253,9 +232,6 @@ header + main .page-hero {
   margin: 0 0 var(--sp-4);
 }
 
-/* =========================
-   PRODUCTS (listing)
-========================= */
 .product-container {
   display: grid;
   gap: var(--sp-4);
@@ -298,9 +274,6 @@ header + main .page-hero {
   color: var(--text);
 }
 
-/* =========================
-   PRODUCTS HOME (cards)
-========================= */
 #products-home .heading {
   font-family: var(--ff-heading);
   font-weight: 500;
@@ -379,12 +352,10 @@ header + main .page-hero {
   width: 36%;
   height: 1px;
   margin: 0 auto var(--sp-2);
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(17, 17, 17, 0.18),
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      rgba(17, 17, 17, 0.18),
+      transparent);
 }
 
 .product-price {
@@ -394,7 +365,6 @@ header + main .page-hero {
   opacity: 0.85;
 }
 
-/* botão */
 .add-to-cart {
   margin-top: var(--sp-3);
   display: inline-flex;
@@ -422,9 +392,6 @@ header + main .page-hero {
   cursor: not-allowed;
 }
 
-/* =========================
-   CART
-========================= */
 .cart-container {
   margin-top: calc(72px + var(--sp-4)) !important;
 }
@@ -567,12 +534,10 @@ header + main .page-hero {
   filter: brightness(1.1);
 }
 
-/* espaço final para não colar no footer */
 .cart-container {
   padding-bottom: calc(var(--sp-6) + env(safe-area-inset-bottom));
 }
 
-/* botão cheio e com margem segura */
 .checkout-btn {
   display: block;
   width: 100%;
@@ -582,9 +547,6 @@ header + main .page-hero {
   box-sizing: border-box;
 }
 
-/* =========================
-   TOASTS
-========================= */
 .toast-container {
   position: fixed;
   top: 100px;
@@ -613,9 +575,6 @@ header + main .page-hero {
   transform: translateX(0);
 }
 
-/* =========================
-   PRE-FOOTER: NEWSLETTER + LOJAS
-========================= */
 #prefooter-cta {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -625,7 +584,6 @@ header + main .page-hero {
 #prefooter-cta .prefooter-wrap {
   display: grid;
   grid-template-columns: 1fr 1.6fr;
-  /* texto | formulários */
   align-items: center;
   gap: var(--sp-6);
 }
@@ -651,7 +609,6 @@ header + main .page-hero {
   max-width: 48ch;
 }
 
-/* duas colunas lado a lado */
 #prefooter-cta .prefooter-forms {
   display: grid !important;
   grid-template-columns: 1fr 1fr;
@@ -660,7 +617,6 @@ header + main .page-hero {
   min-width: 0;
 }
 
-/* cartões */
 #prefooter-cta .pre-card {
   min-width: 0;
 }
@@ -682,7 +638,6 @@ header + main .page-hero {
   max-width: 52ch;
 }
 
-/* campo sublinhado */
 #prefooter-cta .field {
   display: flex;
   align-items: center;
@@ -719,7 +674,6 @@ header + main .page-hero {
   margin: 0 0.25rem;
 }
 
-/* ações */
 #prefooter-cta .icon-btn,
 #prefooter-cta .text-btn {
   border: none;
@@ -764,12 +718,11 @@ header + main .page-hero {
   transition: 0.15s;
 }
 
-#prefooter-cta .text-btn:hover + .chevron {
+#prefooter-cta .text-btn:hover+.chevron {
   opacity: 1;
   transform: translateX(1px);
 }
 
-/* acessibilidade */
 .sr-only {
   position: absolute !important;
   width: 1px;
@@ -782,9 +735,6 @@ header + main .page-hero {
   border: 0;
 }
 
-/* =========================
-   FOOTER
-========================= */
 .footer {
   background: #111;
   color: #fff;
@@ -848,9 +798,6 @@ header + main .page-hero {
   padding-top: 28px;
 }
 
-/* =========================
-   HERO / SLIDER
-========================= */
 .slider {
   position: relative;
   width: 100%;
@@ -869,24 +816,19 @@ header + main .page-hero {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(17, 17, 17, 0.55) 0 45%,
-    rgba(17, 17, 17, 0) 65%
-  );
+  background: linear-gradient(to top,
+      rgba(17, 17, 17, 0.55) 0 45%,
+      rgba(17, 17, 17, 0) 65%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* texto sobre o slider */
 .hero-card-heading-wrapper {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: end center;
-  padding: clamp(var(--sp-4), 3vw, var(--sp-6))
-    clamp(var(--sp-4), 4vw, var(--sp-6))
-    calc(max(20px, env(safe-area-inset-bottom)) + 42px);
+  padding: clamp(var(--sp-4), 3vw, var(--sp-6)) clamp(var(--sp-4), 4vw, var(--sp-6)) calc(max(20px, env(safe-area-inset-bottom)) + 42px);
   z-index: 2;
 }
 
@@ -958,7 +900,6 @@ header + main .page-hero {
   outline-offset: 2px;
 }
 
-/* slides */
 .slides {
   width: 400%;
   height: 100%;
@@ -983,7 +924,6 @@ header + main .page-hero {
   object-position: 50% 22%;
 }
 
-/* dots */
 .manual-navigation,
 .navigation-auto {
   position: absolute;
@@ -1010,39 +950,33 @@ header + main .page-hero {
   background-color: #fff;
 }
 
-/* rádio → deslocamento */
-#radio1:checked ~ .first {
+#radio1:checked~.first {
   margin-left: 0;
 }
 
-#radio2:checked ~ .first {
+#radio2:checked~.first {
   margin-left: -25%;
 }
 
-#radio3:checked ~ .first {
+#radio3:checked~.first {
   margin-left: -50%;
 }
 
-#radio4:checked ~ .first {
+#radio4:checked~.first {
   margin-left: -75%;
 }
 
-/* dot ativo */
-#radio1:checked ~ .navigation-auto .auto-btn1,
-#radio2:checked ~ .navigation-auto .auto-btn2,
-#radio3:checked ~ .navigation-auto .auto-btn3,
-#radio4:checked ~ .navigation-auto .auto-btn4 {
+#radio1:checked~.navigation-auto .auto-btn1,
+#radio2:checked~.navigation-auto .auto-btn2,
+#radio3:checked~.navigation-auto .auto-btn3,
+#radio4:checked~.navigation-auto .auto-btn4 {
   background-color: #fff;
 }
 
-/* depois do slider */
-.slider + .products {
+.slider+.products {
   padding-top: calc(var(--sp-6) + var(--sp-3));
 }
 
-/* =========================
-   RESPONSIVIDADE
-========================= */
 @media (max-width: 1200px) {
   .container {
     width: 90%;
@@ -1065,7 +999,6 @@ header + main .page-hero {
     letter-spacing: 0.07em;
   }
 
-  /* usar a MESMA especificidade do desktop para o pre-footer quebrar certo */
   #prefooter-cta .prefooter-wrap {
     grid-template-columns: 1fr;
     gap: var(--sp-4);
@@ -1156,7 +1089,6 @@ header + main .page-hero {
     gap: var(--sp-4);
   }
 
-  /* toasts no mobile */
   .toast-container {
     top: auto;
     right: 16px;
@@ -1169,7 +1101,6 @@ header + main .page-hero {
     display: grid;
     grid-template-columns: 96px 1fr;
     grid-template-rows: auto auto auto;
-    /* 1: título | 2: preço | 3: qty+trash */
     align-items: center;
     gap: var(--sp-2);
   }
@@ -1185,7 +1116,6 @@ header + main .page-hero {
     display: contents;
   }
 
-  /* Linha 1: TÍTULO */
   .cart-item-title {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
@@ -1196,7 +1126,6 @@ header + main .page-hero {
     text-align: left;
   }
 
-  /* Linha 2: PREÇO */
   .cart-item-price {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
@@ -1207,7 +1136,6 @@ header + main .page-hero {
     margin: 0.25rem 0 0;
   }
 
-  /* Linha 3: CONTADOR + LIXEIRA */
   .quantity-controls {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
@@ -1245,9 +1173,7 @@ header + main .page-hero {
   }
 
   .hero-card-heading-wrapper {
-    padding: clamp(var(--sp-3), 3.5vw, var(--sp-4))
-      clamp(var(--sp-3), 5vw, var(--sp-5))
-      calc(max(22px, env(safe-area-inset-bottom)) + 48px);
+    padding: clamp(var(--sp-3), 3.5vw, var(--sp-4)) clamp(var(--sp-3), 5vw, var(--sp-5)) calc(max(22px, env(safe-area-inset-bottom)) + 48px);
   }
 
   .hero-card-heading-title span {
@@ -1334,10 +1260,6 @@ header + main .page-hero {
   }
 }
 
-/* =========================
-   STICKY FOOTER (usar em páginas necessárias)
-   <body class="page-sticky-footer">
-========================= */
 .page-sticky-footer {
   min-height: 100vh;
   display: flex;
@@ -1348,16 +1270,11 @@ header + main .page-hero {
   margin-top: auto;
 }
 
-/* =========================
-   GUARDAS ANTI-OVERFLOW
-========================= */
-/* trilho do slider muito largo → contenção */
 .slider,
 .slides {
   overflow: hidden;
 }
 
-/* dots + wrapper nunca passam de 100% */
 .manual-navigation,
 .navigation-auto,
 .hero-card-heading-wrapper {
@@ -1365,7 +1282,6 @@ header + main .page-hero {
   box-sizing: border-box;
 }
 
-/* grids que podem estourar 1–2px */
 .product-container-home,
 .cart-box,
 #prefooter-cta .prefooter-wrap,
@@ -1374,7 +1290,6 @@ header + main .page-hero {
   overflow-x: clip;
 }
 
-/* === NOTIFY (toasts + modal) =========================================== */
 :root {
   --notify-bg: #111;
   --notify-fg: #fff;
@@ -1384,6 +1299,7 @@ header + main .page-hero {
   --notify-warn: #f6ad01;
   --notify-info: #2563eb;
 }
+
 .notify-container {
   position: fixed;
   inset: 16px 16px auto auto;
@@ -1393,12 +1309,14 @@ header + main .page-hero {
   gap: 10px;
   pointer-events: none;
 }
+
 @media (max-width: 640px) {
   .notify-container {
     inset: auto 8px 12px 8px;
     align-items: center;
   }
 }
+
 .notify-toast {
   pointer-events: auto;
   min-width: 260px;
@@ -1417,15 +1335,18 @@ header + main .page-hero {
   font-size: 14px;
   line-height: 1.35;
 }
+
 .notify-toast.show {
   opacity: 1;
   transform: translateY(0);
 }
+
 .notify-toast .icon {
   font-size: 18px;
   line-height: 1;
   margin-top: 2px;
 }
+
 .notify-toast .close {
   margin-left: auto;
   opacity: 0.7;
@@ -1435,16 +1356,20 @@ header + main .page-hero {
   cursor: pointer;
   font-size: 16px;
 }
+
 .notify-toast.success {
   background: var(--notify-success);
 }
+
 .notify-toast.error {
   background: var(--notify-error);
 }
+
 .notify-toast.warn {
   background: var(--notify-warn);
   color: #111;
 }
+
 .notify-toast.info {
   background: var(--notify-info);
 }
@@ -1460,9 +1385,11 @@ header + main .page-hero {
   opacity: 0;
   transition: opacity 0.15s ease;
 }
+
 .notify-overlay.show {
   opacity: 1;
 }
+
 .notify-modal {
   background: #fff;
   color: #111;
@@ -1473,22 +1400,27 @@ header + main .page-hero {
   transform: translateY(6px);
   transition: transform 0.15s ease;
 }
+
 .notify-overlay.show .notify-modal {
   transform: translateY(0);
 }
+
 .notify-modal h3 {
   margin: 0 0 8px;
   font-size: 18px;
 }
+
 .notify-modal p {
   margin: 0 0 14px;
   color: #333;
 }
+
 .notify-actions {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
 }
+
 .notify-btn {
   padding: 10px 14px;
   border-radius: 8px;
@@ -1497,6 +1429,7 @@ header + main .page-hero {
   color: #fff;
   cursor: pointer;
 }
+
 .notify-btn.secondary {
   background: #fff;
   color: #111;

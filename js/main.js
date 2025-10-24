@@ -1,22 +1,15 @@
-// Cart state
 let cartItems = JSON.parse(localStorage.getItem("cartItems") || "[]");
 
-/** Persist cartItems to localStorage. */
 function updateLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
-/** Update the cart count badge (#cart-count), if present. */
 function updateCartCount() {
   const count = cartItems.reduce((sum, it) => sum + (it.quantity || 0), 0);
   const badge = document.getElementById("cart-count");
   if (badge) badge.textContent = String(count);
 }
 
-/**
- * Render cart items inside #cartItems and total in #cartTotal.
- * Markup follows the classes expected by style.css (no visual changes intended).
- */
 function displayCartItems() {
   const cartContainer = document.getElementById("cartItems");
   const totalElement = document.getElementById("cartTotal");
@@ -32,27 +25,25 @@ function displayCartItems() {
     const el = document.createElement("div");
     el.className = "cart-item";
 
-    // Quantity control (readonly input; UI changes via +/- only)
     const qtyHtml = `
       <div class="quantity-controls">
         <button aria-label="Decrease quantity" onclick="changeQuantity('${item.name.replace(
-          /'/g,
-          "\\'"
-        )}', -1)">-</button>
+      /'/g,
+      "\\'"
+    )}', -1)">-</button>
         <input type="text" value="${item.quantity}" readonly />
         <button aria-label="Increase quantity" onclick="changeQuantity('${item.name.replace(
-          /'/g,
-          "\\'"
-        )}', 1)">+</button>
+      /'/g,
+      "\\'"
+    )}', 1)">+</button>
       </div>
     `;
 
-    const removeHtml = `<i class="ri-delete-bin-6-line remove-from-cart" aria-label="Remove ${
-      item.name
-    }" role="button" onclick="removeItem('${item.name.replace(
-      /'/g,
-      "\\'"
-    )}')"></i>`;
+    const removeHtml = `<i class="ri-delete-bin-6-line remove-from-cart" aria-label="Remove ${item.name
+      }" role="button" onclick="removeItem('${item.name.replace(
+        /'/g,
+        "\\'"
+      )}')"></i>`;
 
     el.innerHTML = `
       <img src="${item.image}" alt="${item.name}">
@@ -67,14 +58,9 @@ function displayCartItems() {
     cartContainer.appendChild(el);
   });
 
-  if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
+  if (totalElement) totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
 
-/**
- * Add a product to the cart.
- * Reads .product-title, .product-price, .product-img within the product card.
- * Displays as-is; internal numeric parsing is tolerant to $/R$ and separators.
- */
 function addToCart(productCard) {
   const name =
     productCard.querySelector(".product-title")?.textContent?.trim() || "";
@@ -82,7 +68,6 @@ function addToCart(productCard) {
     productCard.querySelector(".product-price")?.textContent?.trim() || "$0";
   const imgSrc = productCard.querySelector(".product-img")?.src || "";
 
-  // Robust parse: keep digits, comma, dot; normalize comma to dot and strip thousand separators.
   const normalized = priceText
     .replace(/[^\d.,-]/g, "")
     .replace(/\.(?=\d{3}\b)/g, "")
@@ -102,7 +87,6 @@ function addToCart(productCard) {
   if (document.getElementById("cartItems")) displayCartItems();
 }
 
-/** Remove an item by name. */
 function removeItem(name) {
   cartItems = cartItems.filter((it) => it.name !== name);
   updateLocalStorage();
@@ -110,7 +94,6 @@ function removeItem(name) {
   if (document.getElementById("cartItems")) displayCartItems();
 }
 
-/** Increment/decrement quantity by delta (min 1). */
 function changeQuantity(name, delta) {
   const item = cartItems.find((it) => it.name === name);
   if (!item) return;
@@ -123,10 +106,6 @@ function changeQuantity(name, delta) {
   }
 }
 
-/**
- * Update quantity from direct input change (kept for completeness).
- * Input is readonly by default; if enabled later, this stays safe.
- */
 function updateQuantity(name, rawValue) {
   const item = cartItems.find((it) => it.name === name);
   if (!item) return;
@@ -141,7 +120,6 @@ function updateQuantity(name, rawValue) {
   }
 }
 
-/** Toast container bootstrap. */
 function createToastContainer() {
   if (document.getElementById("toast-container")) return;
   const toastContainer = document.createElement("div");
@@ -150,7 +128,6 @@ function createToastContainer() {
   document.body.appendChild(toastContainer);
 }
 
-/** Simple toast. */
 function showToast(message) {
   createToastContainer();
   const toast = document.createElement("div");
@@ -167,7 +144,6 @@ function showToast(message) {
   }, 3000);
 }
 
-// Init
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
   if (document.getElementById("cartItems")) displayCartItems();

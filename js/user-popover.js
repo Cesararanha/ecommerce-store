@@ -1,4 +1,3 @@
-// /js/user-popover.js (substituir tudo)
 (function () {
   const trigger = document.querySelector('[data-profile-trigger]');
   if (!trigger) return;
@@ -22,7 +21,6 @@
       opacity: 0,
       transition: 'opacity .15s ease, visibility .15s ease',
     });
-    // Mantém aberto quando o mouse está sobre o popover
     pop.addEventListener('mouseenter', () => clearTimeout(hideTimer));
     pop.addEventListener('mouseleave', scheduleHide);
     document.body.appendChild(pop);
@@ -77,7 +75,7 @@
         pop.style.opacity = '0';
         pop.style.visibility = 'hidden';
       }
-    }, 300); // margem para mover o mouse do ícone ao popover
+    }, 300);
   }
 
   trigger.addEventListener('mouseenter', show);
@@ -85,7 +83,6 @@
   trigger.addEventListener('click', (e) => { e.preventDefault(); open ? scheduleHide() : show(); });
   window.addEventListener('scroll', () => { if (open) place(); }, true);
 
-  // Logout
   document.addEventListener('click', (e) => {
     const a = e.target.closest('[data-logout]');
     if (!a) return;

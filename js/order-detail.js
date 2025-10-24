@@ -1,4 +1,3 @@
-// /js/order-detail.js
 document.addEventListener("DOMContentLoaded", () => {
   const session = DB.getSession();
   if (!session?.userId) {
@@ -29,14 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .map(
       (it) => `
     <li class="order-product">
-      ${
-        it.image ? `<img src="${it.image}" alt="${it.name}" class="thumb">` : ""
-      }
+      ${it.image ? `<img src="${it.image}" alt="${it.name}" class="thumb">` : ""
+        }
       <div class="info">
         <div class="name">${it.name}</div>
         <div class="meta">Qtd: ${it.qty ?? 1} • Preço: ${Number(
-        it.price
-      ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</div>
+          it.price
+        ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</div>
       </div>
     </li>
   `
@@ -47,12 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="order-head">
       <h2>Pedido ${order.id}</h2>
       <div class="muted">Realizado em ${new Date(
-        order.createdAt
-      ).toLocaleString("pt-BR")}</div>
+    order.createdAt
+  ).toLocaleString("pt-BR")}</div>
       <div class="status"><strong>Status:</strong> ${order.status}</div>
       <div class="total"><strong>Total:</strong> ${Number(
-        order.total
-      ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</div>
+    order.total
+  ).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</div>
     </div>
 
     <h3>Itens</h3>
@@ -61,9 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <h3>Entrega</h3>
     <div class="address">
       <div>${addr.full_name || ""}${addr.phone ? " • " + addr.phone : ""}</div>
-      <div>${addr.street || ""}, ${addr.number || ""}${
-    addr.complement ? " - " + addr.complement : ""
-  }</div>
+      <div>${addr.street || ""}, ${addr.number || ""}${addr.complement ? " - " + addr.complement : ""
+    }</div>
       <div>${addr.neighborhood || ""}</div>
       <div>${addr.city || ""} - ${addr.state || ""}</div>
       <div>CEP ${addr.cep || ""}</div>

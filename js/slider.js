@@ -1,6 +1,5 @@
-// Simple auto-advance slider (8s). Works with inputs #radio1, #radio2, ...
 let count = 1;
-let maxSlides = 4; // default fallback
+let maxSlides = 4;
 
 function initSlider() {
   const radios = Array.from(document.querySelectorAll('input[id^="radio"]'));

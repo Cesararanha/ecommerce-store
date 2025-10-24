@@ -1,4 +1,3 @@
-// /js/checkout.js
 document.addEventListener("DOMContentLoaded", () => {
   const userId = DB.getSession()?.userId;
   if (!userId) {
@@ -9,19 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   if (!form) return;
 
-  // helpers de mensagem (usa $msg se existir; senão, alert)
   const msgError = (m) => (window.$msg?.error ? $msg.error(m) : alert(m));
   const msgWarn = (m) => (window.$msg?.warn ? $msg.warn(m) : alert(m));
   const msgFlash = (m, t = "success") =>
     window.$msg?.flash ? $msg.flash(m, t) : alert(m);
 
-  // Lê o modo: 'checkout' (padrão) ou 'manage' (vindo do perfil)
   const mode =
     (typeof getQueryParam === "function"
       ? getQueryParam("mode")
       : new URL(location.href).searchParams.get("mode")) || "checkout";
 
-  // Preenche endereço salvo, se houver
   const saved = DB.getAddress(userId);
   if (saved) {
     const map = {
@@ -64,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       isDefault: !!form.querySelector('input[name="default"]')?.checked,
     };
 
-    // Regras extras (além do HTML5)
     const cepRe = /^\d{5}-?\d{3}$/;
     if (!cepRe.test(address.cep)) {
       msgError("CEP inválido (ex.: 57035-290)");
@@ -75,17 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Sempre salva o endereço
     DB.setAddress(userId, address);
 
-    // Modo 'manage': veio do perfil -> só salva e volta
     if (mode === "manage") {
-      msgFlash("Endereço salvo!", "success"); // aparece no perfil após redirect
+      msgFlash("Endereço salvo!", "success");
       location.href = "/html/perfil.html";
       return;
     }
 
-    // Modo 'checkout': criar pedido a partir do carrinho
     const items = DB.getLegacyCart();
     if (!items.length) {
       msgWarn("Seu carrinho está vazio.");
@@ -113,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     DB.addOrder(userId, order);
     DB.clearLegacyCart();
-    msgFlash("Pedido criado com sucesso!", "success"); // aparece na página de pedidos
+    msgFlash("Pedido criado com sucesso!", "success");
     location.href = "/html/pedidos.html";
   });
 });

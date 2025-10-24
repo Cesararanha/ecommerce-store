@@ -1,11 +1,9 @@
-// /js/storage.js
 const DB = (() => {
   const K = {
     USERS: "serenne:users",
     SESSION: "serenne:session",
-    ADDRESSES: "serenne:addresses", // Record<userId, Address>
-    ORDERS: "serenne:orders", // Record<userId, Order[]>
-    // O seu carrinho atual (legacy) fica em "cartItems"
+    ADDRESSES: "serenne:addresses",
+    ORDERS: "serenne:orders",
     CART_LEGACY: "cartItems",
   };
 
@@ -18,7 +16,6 @@ const DB = (() => {
   };
   const write = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 
-  // ===== Users
   const users = () => read(K.USERS, []);
   const saveUsers = (arr) => write(K.USERS, arr);
   const findUserByEmail = (email) =>
@@ -32,7 +29,6 @@ const DB = (() => {
     return u;
   };
 
-  // ===== Session
   const getSession = () => read(K.SESSION, null);
   const setSession = (userId) =>
     write(K.SESSION, { userId, createdAt: new Date().toISOString() });
@@ -43,7 +39,6 @@ const DB = (() => {
     return s?.userId;
   };
 
-  // ===== Address (1 por usuário)
   const getAddresses = () => read(K.ADDRESSES, {});
   const getAddress = (userId) => getAddresses()[userId] ?? null;
   const setAddress = (userId, addr) => {
@@ -53,7 +48,6 @@ const DB = (() => {
     return addr;
   };
 
-  // ===== Orders
   const getOrders = (userId) => read(K.ORDERS, {})[userId] ?? [];
   const addOrder = (userId, order) => {
     const all = read(K.ORDERS, {});
@@ -62,7 +56,6 @@ const DB = (() => {
     return order;
   };
 
-  // ===== Cart (compat com seu main.js)
   const getLegacyCart = () => read(K.CART_LEGACY, []);
   const setLegacyCart = (items) => write(K.CART_LEGACY, items);
   const clearLegacyCart = () => write(K.CART_LEGACY, []);
@@ -96,7 +89,6 @@ const DB = (() => {
   };
 })();
 
-// Hash simples (MVP) — NÃO usar assim em produção
 async function hashPassword(pwd) {
   const bytes = new TextEncoder().encode(pwd);
   const buf = await crypto.subtle.digest("SHA-256", bytes);
@@ -105,12 +97,10 @@ async function hashPassword(pwd) {
     .join("");
 }
 
-// ID curto de pedido
 function shortId(prefix = "#") {
   return prefix + Math.random().toString(36).slice(2, 8).toUpperCase();
 }
 
-// Util de querystring (?next=/html/endereco.html)
 function getQueryParam(name) {
   const url = new URL(location.href);
   return url.searchParams.get(name);

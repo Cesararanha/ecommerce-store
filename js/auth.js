@@ -1,4 +1,3 @@
-// /js/auth.js
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   if (!form) return;
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (onLogin) bindLogin(form);
 });
 
-// helpers de mensagem (usa $msg se existir; senão, alert)
 function err(msg) {
   return window.$msg?.error ? $msg.error(msg) : alert(msg);
 }
@@ -54,7 +52,6 @@ function bindSignup(form) {
     DB.upsertUser(user);
     DB.setSession(user.id);
 
-    // toast pós-redirect
     flashOk("Conta criada com sucesso!");
     location.href = nextOr("/html/pedidos.html");
   });
@@ -78,7 +75,6 @@ function bindLogin(form) {
 
     DB.setSession(user.id);
 
-    // toast pós-redirect
     flashOk("Login realizado!");
     location.href = nextOr("/html/pedidos.html");
   });
