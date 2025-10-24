@@ -22,30 +22,22 @@
   ========================== -->
     <header>
         <div class="nav container">
-            <!-- Menu (mobile) -->
             <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
-
-            <!-- Logo -->
             <a href="/index.html" class="logo">Serenne</a>
-
-            <!-- Navbar -->
             <nav id="primary-nav" class="navbar" aria-label="Categorias">
                 <a href="/html/masculino.html" class="nav-link">Masculino</a>
                 <a href="/html/feminino.html" class="nav-link">Feminino</a>
                 <a href="/html/infantil.html" class="nav-link">Infantil</a>
                 <a href="/html/calcados.html" class="nav-link">Calçados</a>
                 <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+                <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
             </nav>
-
-            <!-- Ícones de conta + carrinho -->
             <div class="nav-icons">
-                <a href="/html/login.html" aria-label="Minha conta">
+                <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
                     <i class="ri-user-line" id="user-icon"></i>
                 </a>
                 <a href="/html/cart.html" aria-label="Abrir carrinho">
-                    <i class="ri-shopping-bag-line" id="cart-icon">
-                        <span id="cart-count">0</span>
-                    </i>
+                    <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
                 </a>
             </div>
         </div>
@@ -86,22 +78,22 @@
 
                 <!-- Imagens -->
                 <div class="slide first">
-                    <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_0.jpg"
+                    <img src="/assets/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_0.jpg"
                         alt="Campanha Outono/Inverno — Slide 1" decoding="async" fetchpriority="high" />
                 </div>
 
                 <div class="slide">
-                    <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_1.jpg"
+                    <img src="/assets/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_1.jpg"
                         alt="Campanha Outono/Inverno — Slide 2" loading="lazy" decoding="async" />
                 </div>
 
                 <div class="slide">
-                    <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_3.jpg"
+                    <img src="/assets/slider/Lucid_Origin_Luxury_fashion_campaign_image_169_cinematic_compo_3.jpg"
                         alt="Campanha Outono/Inverno — Slide 3" loading="lazy" decoding="async" />
                 </div>
 
                 <div class="slide">
-                    <img src="/assets/imagens_modelos/slider/Lucid_Origin_Luxury_fashion_campaign_website_hero_banner_cinem_1.jpg"
+                    <img src="/assets/slider/Lucid_Origin_Luxury_fashion_campaign_website_hero_banner_cinem_1.jpg"
                         alt="Campanha Outono/Inverno — Slide 4" loading="lazy" decoding="async" />
                 </div>
 
@@ -133,7 +125,7 @@
                 <!-- Produto 1 -->
                 <div class="product-home">
 
-                    <img src="/assets/imagens_modelos/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__0.jpg"
+                    <img src="/assets/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__0.jpg"
                         class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
                     <div class="product-home-info">
                         <h2 class="product-home-title">Minimalismo com sofisticação</h2>
@@ -142,7 +134,7 @@
 
                 <!-- Produto 2 -->
                 <div class="product-home">
-                    <img src="/assets/imagens_modelos/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__3.jpg"
+                    <img src="/assets/home_images/Lucid_Origin_Luxury_fashion_product_launch_campaign_image_169__3.jpg"
                         class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
                     <div class="product-home-info">
                         <h2 class="product-home-title">O Clássico Reinventado</h2>
@@ -151,7 +143,7 @@
 
                 <!-- Produto 3 -->
                 <div class="product-home">
-                    <img src="/assets/imagens_modelos/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_0.jpg"
+                    <img src="/assets/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_0.jpg"
                         class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
                     <div class="product-home-info">
                         <h2 class="product-home-title">Elegância Atemporal</h2>
@@ -160,7 +152,7 @@
 
                 <!-- Produto 4 -->
                 <div class="product-home">
-                    <img src="/assets/imagens_modelos/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_1.jpg"
+                    <img src="/assets/home_images/Lucid_Realism_exquisite_high_fashion_photography_of_Luxury_fas_1.jpg"
                         class="product-home-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
                     <div class="product-home-info">
                         <h2 class="product-home-title">Couro legítimo em design clássico</h2>
@@ -260,6 +252,10 @@
     <script src="/js/main.js"></script>
     <script src="/js/slider.js"></script>
     <script src="/js/menu.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/user-popover.js"></script>
+
+
 </body>
 
 </html>

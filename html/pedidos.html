@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="/css/account.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
   <!-- Header -->
   <header>
@@ -22,10 +24,12 @@
         <a href="/html/infantil.html" class="nav-link">Infantil</a>
         <a href="/html/calcados.html" class="nav-link">Calçados</a>
         <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
       </nav>
       <div class="nav-icons">
-        <a href="/html/login.html" aria-label="Minha conta"><i class="ri-user-line" id="user-icon"></i></a>
-        <a href="/html/cart.html" aria-label="Abrir carrinho">
+        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
+          <i class="ri-user-line" id="user-icon"></i>
+        </a> <a href="/html/cart.html" aria-label="Abrir carrinho">
           <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
         </a>
       </div>
@@ -113,5 +117,12 @@
   </footer>
 
   <script src="/js/menu.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/orders.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/user-popover.js"></script>
+
+
 </body>
+
 </html>

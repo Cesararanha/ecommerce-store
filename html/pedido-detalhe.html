@@ -3,31 +3,26 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Calçados — Serenne Brasil</title>
-    <meta name="description" content="Coleção de Calçados da Serenne Brasil - Loja virtual" />
-    <meta name="theme-color" content="#111111" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhe do Pedido</title>
 
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/account.css">
+    <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Remix Icons -->
+    <!-- Remix Icons (necessário para os ícones do header) -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- =========================
-           HEADER (replicado do index)
-      ========================== -->
+         HEADER
+  ========================== -->
     <header>
         <div class="nav container">
-            <!-- Menu (mobile) -->
             <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
-
-            <!-- Logo -->
             <a href="/index.html" class="logo">Serenne</a>
 
-            <!-- Navbar -->
             <nav id="primary-nav" class="navbar" aria-label="Categorias">
                 <a href="/html/masculino.html" class="nav-link">Masculino</a>
                 <a href="/html/feminino.html" class="nav-link">Feminino</a>
@@ -37,7 +32,6 @@
                 <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
             </nav>
 
-            <!-- Ícones de conta + carrinho -->
             <div class="nav-icons">
                 <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
                     <i class="ri-user-line" id="user-icon"></i>
@@ -51,50 +45,18 @@
         </div>
     </header>
 
-    <main>
-        <!-- =========================
-            HERO / BREADCRUMBS (padrão simples)
-        ========================== -->
-        <section class="page-hero">
-            <div class="container">
-                <nav class="breadcrumbs" aria-label="Trilha de navegação">
-                    <a href="/index.html">Início</a>
-                    <span aria-hidden="true">›</span>
-                    <span>Calçados</span>
-                </nav>
-                <h1 class="page-title">Calçados</h1>
-                <!-- <p class="page-subtitle">Tênis, botas e mais</p> -->
-            </div>
-        </section>
-
-        <!-- =========================
-             PRODUCTS
-        ========================== -->
-        <section class="products container" id="products">
-            <!-- <h2 class="heading">Destaques</h2> -->
-            <div class="product-container" id="productList">
-
-                <!-- Produto exemplo -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/calcados/luxury leather sneakers/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-                        class="product-img" alt="Tênis de couro de luxo preto" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Black Luxury Leather</h2>
-                        <p class="product-price">$608</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Dica: repita o bloco .product acima para mais itens -->
-
-            </div>
-        </section>
+    <!-- =========================
+         CONTEÚDO
+  ========================== -->
+    <main class="container">
+        <h1>Detalhe do Pedido</h1>
+        <div class="order-detail"><!-- preenchido via /js/order-detail.js --></div>
+        <p><a href="/html/pedidos.html" class="btn-back">← Voltar para Meus Pedidos</a></p>
     </main>
 
     <!-- =========================
-               FOOTER 
-          ========================== -->
+         FOOTER
+  ========================== -->
     <footer class="footer" id="footer">
         <div class="footer-c container">
             <div class="footer-box">
@@ -126,20 +88,23 @@
                 <a href="#">Política de devolução</a>
                 <a href="#">Termos de venda</a>
                 <a href="#">Comunidade</a>
-
             </div>
         </div>
         <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
     </footer>
 
-    <!-- Scripts  -->
+    <!-- =========================
+         SCRIPTS (ordem importa)
+  ========================== -->
     <script src="/js/main.js"></script>
-    <script src="/js/slider.js"></script>
     <script src="/js/menu.js"></script>
+
+    <!-- Dados / lógica da loja -->
     <script src="/js/storage.js"></script>
+    <script src="/js/order-detail.js"></script>
+
+    <!-- Popover do perfil (usa storage.js) -->
     <script src="/js/user-popover.js"></script>
-
-
 </body>
 
 </html>
