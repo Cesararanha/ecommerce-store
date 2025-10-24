@@ -2,211 +2,195 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Acessórios — Serenne Brasil</title>
-    <meta name="description" content="Acessórios da Serenne Brasil - Loja virtual" />
-    <meta name="theme-color" content="#111111" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acessórios — Serenne Brasil</title>
+  <meta name="description" content="Acessórios da Serenne Brasil - Loja virtual" />
+  <meta name="theme-color" content="#111111" />
 
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="/css/style.css" />
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/css/style.css" />
 
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- =========================
-           HEADER 
-      ========================== -->
-    <header>
-        <div class="nav container">
-            <!-- Menu (mobile) -->
-            <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
+  <!-- Header -->
+  <header>
+    <div class="nav container">
+      <!-- Menu (mobile) -->
+      <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
 
-            <!-- Logo -->
-            <a href="/index.html" class="logo">Serenne</a>
+      <!-- Logo -->
+      <a href="/index.html" class="logo">Serenne</a>
 
-            <!-- Navbar -->
-            <nav id="primary-nav" class="navbar" aria-label="Categorias">
-                <a href="/html/masculino.html" class="nav-link">Masculino</a>
-                <a href="/html/feminino.html" class="nav-link">Feminino</a>
-                <a href="/html/infantil.html" class="nav-link">Infantil</a>
-                <a href="/html/calcados.html" class="nav-link">Calçados</a>
-                <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
-            </nav>
+      <!-- Navbar -->
+      <nav id="primary-nav" class="navbar" aria-label="Categorias">
+        <a href="/html/masculino.html" class="nav-link">Masculino</a>
+        <a href="/html/feminino.html" class="nav-link">Feminino</a>
+        <a href="/html/infantil.html" class="nav-link">Infantil</a>
+        <a href="/html/calcados.html" class="nav-link">Calçados</a>
+        <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
+      </nav>
 
-            <!-- Ícones de conta + carrinho -->
-            <div class="nav-icons">
-                <a href="/html/login.html" aria-label="Minha conta">
-                    <i class="ri-user-line" id="user-icon"></i>
-                </a>
-                <a href="/html/cart.html" aria-label="Abrir carrinho">
-                    <i class="ri-shopping-bag-line" id="cart-icon">
-                        <span id="cart-count">0</span>
-                    </i>
-                </a>
-            </div>
+      <!-- Ícones de conta + carrinho -->
+      <div class="nav-icons">
+        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
+          <i class="ri-user-line" id="user-icon"></i>
+        </a>
+        <a href="/html/cart.html" aria-label="Abrir carrinho">
+          <i class="ri-shopping-bag-line" id="cart-icon">
+            <span id="cart-count">0</span>
+          </i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Trilha de navegação">
+          <a href="/index.html">Início</a>
+          <span aria-hidden="true">›</span>
+          <span>Acessórios</span>
+        </nav>
+        <h1 class="page-title">Acessórios</h1>
+      </div>
+    </section>
+
+    <section class="products container" id="products">
+      <div class="product-container" id="productList">
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/bolsa/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
+            class="product-img" alt="Bolsa de couro feminina cor neutra" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Leather Handbag</h2>
+            <p class="product-price">$6008</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <!-- =========================
-            HERO / BREADCRUMBS
-        ========================== -->
-        <section class="page-hero">
-            <div class="container">
-                <nav class="breadcrumbs" aria-label="Trilha de navegação">
-                    <a href="/index.html">Início</a>
-                    <span aria-hidden="true">›</span>
-                    <span>Acessórios</span>
-                </nav>
-                <h1 class="page-title">Acessórios</h1>
-                <!-- <p class="page-subtitle">Bolsas, óculos, relógios e mais</p> -->
-            </div>
-        </section>
-
-        <!-- =========================
-             PRODUCTS
-        ========================== -->
-        <section class="products container" id="products">
-            <!-- <h2 class="heading">Destaques</h2> -->
-            <div class="product-container" id="productList">
-
-                <!-- Produto 1 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/bolsa/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-                        class="product-img" alt="Bolsa de couro feminina cor neutra" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Leather Handbag</h2>
-                        <p class="product-price">$6008</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 2 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
-                        class="product-img" alt="Lenço de seda estampado" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Silk Scarf</h2>
-                        <p class="product-price">$68</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (1).jpg"
-                        class="product-img" alt="Óculos de sol preto" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Sunglasses</h2>
-                        <p class="product-price">$68</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (2).jpg"
-                        class="product-img" alt="Relógio de pulso com pulseira de couro claro" loading="lazy"
-                        decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Leather Wristwatch</h2>
-                        <p class="product-price">$19980</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 5 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1 (2).jpg"
-                        class="product-img" alt="Relógio de pulso couro escuro" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Dark Leather Wristwatch</h2>
-                        <p class="product-price">$19980</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 6 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__2 (2).jpg"
-                        class="product-img" alt="Relógio de pulso dourado" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Gold Wristwatch</h2>
-                        <p class="product-price">$59980</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-                <!-- Produto 7 -->
-                <div class="product">
-                    <img src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (2).jpg"
-                        class="product-img" alt="Relógio de pulso couro preto" loading="lazy" decoding="async">
-                    <div class="product-info">
-                        <h2 class="product-title">Black Leather Wristwatch</h2>
-                        <p class="product-price">$19980</p>
-                        <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao
-                            carrinho</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- =========================
-           FOOTER 
-      ========================== -->
-    <footer class="footer" id="footer">
-        <div class="footer-c container">
-            <div class="footer-box">
-                <h2>Serenne</h2>
-                <div class="social">
-                    <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
-                    <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
-                    <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
-                    <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
-                    <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-box">
-                <h3>Ajuda</h3>
-                <a href="#">Contatos</a>
-                <a href="#">FAQ</a>
-                <a href="#">Acompanhe seu pedido</a>
-                <a href="#">Métodos de pagamento</a>
-                <a href="#">Devolução</a>
-                <a href="#">Trabalhe conosco</a>
-            </div>
-
-            <div class="footer-box">
-                <h3>Legal e Privacidade</h3>
-                <a href="#">Aviso legal</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos e condições</a>
-                <a href="#">Política de devolução</a>
-                <a href="#">Termos de venda</a>
-                <a href="#">Comunidade</a>
-
-            </div>
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (1).jpg"
+            class="product-img" alt="Lenço de seda estampado" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Silk Scarf</h2>
+            <p class="product-price">$68</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
         </div>
-        <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
-    </footer>
 
-    <!-- Scripts  -->
-    <script src="/js/main.js"></script>
-    <script src="/js/slider.js"></script>
-    <script src="/js/menu.js"></script>
+        <!-- Produto 3 -->
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/oculos/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (1).jpg"
+            class="product-img" alt="Óculos de sol preto" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Sunglasses</h2>
+            <p class="product-price">$68</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
+        </div>
 
+        <!-- Produto 4 -->
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0 (2).jpg"
+            class="product-img" alt="Relógio de pulso com pulseira de couro claro" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Leather Wristwatch</h2>
+            <p class="product-price">$19980</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
+        </div>
+
+        <!-- Produto 5 -->
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__1 (2).jpg"
+            class="product-img" alt="Relógio de pulso couro escuro" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Dark Leather Wristwatch</h2>
+            <p class="product-price">$19980</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
+        </div>
+
+        <!-- Produto 6 -->
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__2 (2).jpg"
+            class="product-img" alt="Relógio de pulso dourado" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Gold Wristwatch</h2>
+            <p class="product-price">$59980</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
+        </div>
+
+        <!-- Produto 7 -->
+        <div class="product">
+          <img
+            src="/assets/imagens_modelos/acessorios/relogio/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__3 (2).jpg"
+            class="product-img" alt="Relógio de pulso couro preto" loading="lazy" decoding="async" />
+          <div class="product-info">
+            <h2 class="product-title">Black Leather Wristwatch</h2>
+            <p class="product-price">$19980</p>
+            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-c container">
+      <div class="footer-box">
+        <h2>Serenne</h2>
+        <div class="social">
+          <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
+          <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+          <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
+          <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
+          <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-box">
+        <h3>Ajuda</h3>
+        <a href="#">Contatos</a>
+        <a href="#">FAQ</a>
+        <a href="#">Acompanhe seu pedido</a>
+        <a href="#">Métodos de pagamento</a>
+        <a href="#">Devolução</a>
+        <a href="#">Trabalhe conosco</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Legal e Privacidade</h3>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos e condições</a>
+        <a href="#">Política de devolução</a>
+        <a href="#">Termos de venda</a>
+        <a href="#">Comunidade</a>
+      </div>
+    </div>
+    <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/slider.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/notify.js"></script>
+  <script src="/js/user-popover.js"></script>
 </body>
 
 </html>

@@ -3,15 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feminino — Serenne Brasil</title>
-  <meta name="description" content="Coleção Feminina da Serenne Brasil - Loja virtual" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhe do Pedido</title>
 
-  <!-- CSS principal -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/account.css" />
   <link rel="stylesheet" href="/css/style.css" />
 
-  <!-- Remix Icons -->
+  <!-- Remix Icons (necessário para os ícones do header) -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -19,7 +18,6 @@
   <header>
     <div class="nav container">
       <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
-
       <a href="/index.html" class="logo">Serenne</a>
 
       <nav id="primary-nav" class="navbar" aria-label="Categorias">
@@ -44,55 +42,14 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumbs" aria-label="Trilha de navegação">
-          <a href="/index.html">Início</a>
-          <span aria-hidden="true">›</span>
-          <span>Feminino</span>
-        </nav>
-        <h1 class="page-title">Feminino</h1>
-      </div>
-    </section>
-
-    <section class="products container" id="products">
-      <div class="product-container" id="productList">
-        <div class="product">
-          <img
-            src="/assets/imagens_modelos/feminino/beige trench coat/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-            class="product-img" alt="Trench coat bege feminino" loading="lazy" decoding="async" />
-          <div class="product-info">
-            <h2 class="product-title">Beige Trench Coat</h2>
-            <p class="product-price">$800</p>
-            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
-          </div>
-        </div>
-
-        <div class="product">
-          <img
-            src="/assets/imagens_modelos/feminino/black silk dress/Lucid_Realism_exquisite_high_fashion_photography_of_a_fullbody_3.jpg"
-            class="product-img" alt="Vestido de seda preto" loading="lazy" decoding="async" />
-          <div class="product-info">
-            <h2 class="product-title">Black Silk Dress</h2>
-            <p class="product-price">$1800</p>
-            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
-          </div>
-        </div>
-
-        <!-- Produto 3 -->
-        <div class="product">
-          <img
-            src="/assets/imagens_modelos/feminino/white satin blouse/Lucid_Realism_exquisite_high_fashion_photography_of_Full_body__0.jpg"
-            class="product-img" alt="Blusa de cetim branca" loading="lazy" decoding="async" />
-          <div class="product-info">
-            <h2 class="product-title">White Satin Blouse</h2>
-            <p class="product-price">$540</p>
-            <a class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)">Adicionar ao carrinho</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <main class="container">
+    <h1>Detalhe do Pedido</h1>
+    <div class="order-detail">
+      <!-- preenchido via /js/order-detail.js -->
+    </div>
+    <p>
+      <a href="/html/pedidos.html" class="btn-back">← Voltar para Meus Pedidos</a>
+    </p>
   </main>
 
   <footer class="footer" id="footer">
@@ -132,9 +89,9 @@
   </footer>
 
   <script src="/js/main.js"></script>
-  <script src="/js/slider.js"></script>
   <script src="/js/menu.js"></script>
   <script src="/js/storage.js"></script>
+  <script src="/js/order-detail.js"></script>
   <script src="/js/notify.js"></script>
   <script src="/js/user-popover.js"></script>
 </body>

@@ -13,7 +13,6 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="nav container">
       <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
@@ -24,9 +23,12 @@
         <a href="/html/infantil.html" class="nav-link">Infantil</a>
         <a href="/html/calcados.html" class="nav-link">Calçados</a>
         <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
       </nav>
       <div class="nav-icons">
-        <a href="/html/login.html" aria-label="Minha conta"><i class="ri-user-line" id="user-icon"></i></a>
+        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
+          <i class="ri-user-line" id="user-icon"></i>
+        </a>
         <a href="/html/cart.html" aria-label="Abrir carrinho">
           <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
         </a>
@@ -57,20 +59,20 @@
               <div class="form-field">
                 <label for="full-name">Nome completo</label>
                 <input id="full-name" name="full_name" type="text" class="form-input" autocomplete="name"
-                  placeholder="Ana Silva" required>
+                  placeholder="Ana Silva" required />
               </div>
               <div class="form-field">
                 <label for="phone">Telefone</label>
                 <input id="phone" name="phone" type="tel" class="form-input" inputmode="tel"
-                  placeholder="(11) 99999-9999" autocomplete="tel">
+                  placeholder="(11) 99999-9999" autocomplete="tel" />
               </div>
             </div>
 
-            <div class="form-grid-3" style="margin-top: var(--sp-3);">
+            <div class="form-grid-3" style="margin-top: var(--sp-3)">
               <div class="form-field">
                 <label for="cep">CEP</label>
                 <input id="cep" name="cep" type="text" class="form-input" inputmode="numeric" placeholder="00000-000"
-                  autocomplete="postal-code" required>
+                  autocomplete="postal-code" required />
               </div>
               <div class="form-field">
                 <label for="state">Estado</label>
@@ -108,46 +110,48 @@
               <div class="form-field">
                 <label for="city">Cidade</label>
                 <input id="city" name="city" type="text" class="form-input" autocomplete="address-level2"
-                  placeholder="São Paulo" required>
+                  placeholder="São Paulo" required />
               </div>
             </div>
 
-            <div class="form-grid-2" style="margin-top: var(--sp-3);">
+            <div class="form-grid-2" style="margin-top: var(--sp-3)">
               <div class="form-field">
                 <label for="street">Endereço</label>
                 <input id="street" name="street" type="text" class="form-input" autocomplete="address-line1"
-                  placeholder="Rua Exemplo, Bairro" required>
+                  placeholder="Rua Exemplo, Bairro" required />
               </div>
               <div class="form-field">
                 <label for="number">Número</label>
-                <input id="number" name="number" type="text" class="form-input" placeholder="123" required>
+                <input id="number" name="number" type="text" class="form-input" placeholder="123" required />
               </div>
             </div>
 
-            <div class="form-grid-2" style="margin-top: var(--sp-3);">
+            <div class="form-grid-2" style="margin-top: var(--sp-3)">
               <div class="form-field">
                 <label for="complement">Complemento (opcional)</label>
                 <input id="complement" name="complement" type="text" class="form-input"
-                  placeholder="Apto, bloco, referência…">
+                  placeholder="Apto, bloco, referência…" />
               </div>
               <div class="form-field">
                 <label for="neighborhood">Bairro</label>
-                <input id="neighborhood" name="neighborhood" type="text" class="form-input" placeholder="Centro">
+                <input id="neighborhood" name="neighborhood" type="text" class="form-input" placeholder="Centro" />
               </div>
             </div>
 
-            <div class="form-row" style="margin: var(--sp-3) 0;">
-              <label class="form-row"><input type="checkbox" name="default" /> Usar como endereço padrão</label>
+            <div class="form-row" style="margin: var(--sp-3) 0">
+              <label class="form-row"><input type="checkbox" name="default" /> Usar como endereço
+                padrão</label>
             </div>
 
-            <button class="btn-primary" type="submit" href="./pedidos.html">Salvar endereço</button>
+            <button class="btn-primary" type="submit" href="./pedidos.html">
+              Salvar endereço
+            </button>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer" id="footer">
     <div class="footer-c container">
       <div class="footer-box">
@@ -183,6 +187,11 @@
   </footer>
 
   <script src="/js/menu.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/notify.js"></script>
+  <script src="/js/validation.js"></script>
+  <script src="/js/checkout.js"></script>
+  <script src="/js/user-popover.js"></script>
 </body>
 
 </html>

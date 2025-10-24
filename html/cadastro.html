@@ -13,27 +13,23 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="nav container">
-      <!-- Menu (mobile) -->
       <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
 
-      <!-- Logo -->
       <a href="/index.html" class="logo">Serenne</a>
 
-      <!-- Navbar -->
       <nav id="primary-nav" class="navbar" aria-label="Categorias">
         <a href="/html/masculino.html" class="nav-link">Masculino</a>
         <a href="/html/feminino.html" class="nav-link">Feminino</a>
         <a href="/html/infantil.html" class="nav-link">Infantil</a>
         <a href="/html/calcados.html" class="nav-link">Calçados</a>
         <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
       </nav>
 
-      <!-- Ícones de conta + carrinho -->
       <div class="nav-icons">
-        <a href="/html/login.html" aria-label="Minha conta">
+        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
           <i class="ri-user-line" id="user-icon"></i>
         </a>
         <a href="/html/cart.html" aria-label="Abrir carrinho">
@@ -46,7 +42,6 @@
   </header>
 
   <main>
-    <!-- Breadcrumbs + Title -->
     <section class="auth-hero">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Trilha de navegação">
@@ -62,38 +57,40 @@
       <div class="container auth-grid">
         <div class="auth-card" role="region" aria-labelledby="cadastro-title">
           <h2 id="cadastro-title" class="auth-title">Crie sua conta</h2>
-          <p class="auth-sub">Preencha seus dados para começar a comprar com mais praticidade.</p>
+          <p class="auth-sub">
+            Preencha seus dados para começar a comprar com mais praticidade.
+          </p>
 
           <form action="#" method="post" novalidate>
             <div class="auth-grid-2">
               <div class="auth-field">
                 <label for="first-name">Nome</label>
                 <input id="first-name" name="first_name" type="text" class="auth-input" autocomplete="given-name"
-                  placeholder="Ana" required>
+                  placeholder="Ana" required />
               </div>
               <div class="auth-field">
                 <label for="last-name">Sobrenome</label>
                 <input id="last-name" name="last_name" type="text" class="auth-input" autocomplete="family-name"
-                  placeholder="Silva" required>
+                  placeholder="Silva" required />
               </div>
             </div>
 
             <div class="auth-field">
               <label for="cad-email">E-mail</label>
               <input id="cad-email" name="email" type="email" class="auth-input" autocomplete="email"
-                placeholder="voce@exemplo.com" required>
+                placeholder="voce@exemplo.com" required />
             </div>
 
             <div class="auth-grid-2">
               <div class="auth-field">
                 <label for="cad-pass">Senha</label>
                 <input id="cad-pass" name="password" type="password" class="auth-input" autocomplete="new-password"
-                  placeholder="Mínimo 8 caracteres" minlength="8" required>
+                  placeholder="Mínimo 8 caracteres" minlength="8" required />
               </div>
               <div class="auth-field">
                 <label for="cad-pass2">Confirmar senha</label>
                 <input id="cad-pass2" name="confirm_password" type="password" class="auth-input"
-                  autocomplete="new-password" placeholder="Repita a senha" minlength="8" required>
+                  autocomplete="new-password" placeholder="Repita a senha" minlength="8" required />
               </div>
             </div>
 
@@ -101,28 +98,30 @@
           </form>
 
           <!-- Divider -->
-          <div class="auth-divider" style="margin: var(--sp-4) 0"><span>ou</span></div>
+          <div class="auth-divider" style="margin: var(--sp-4) 0">
+            <span>ou</span>
+          </div>
 
-          <!-- Botões sociais -->
           <div class="auth-providers">
             <button class="auth-provider" type="button">
-              <i class="ri-google-fill" aria-hidden="true"></i> Continuar com Google
+              <i class="ri-google-fill" aria-hidden="true"></i> Continuar com
+              Google
             </button>
             <button class="auth-provider" type="button">
-              <i class="ri-apple-fill" aria-hidden="true"></i> Continuar com Apple
+              <i class="ri-apple-fill" aria-hidden="true"></i> Continuar com
+              Apple
             </button>
           </div>
 
-
-          <p class="auth-sub" style="margin-top: var(--sp-4); text-align:center;">
-            <span class="auth-footer">Já tem conta? <a href="/html/login.html" class="auth-link">Entrar</a></span>
+          <p class="auth-sub" style="margin-top: var(--sp-4); text-align: center">
+            <span class="auth-footer">Já tem conta?
+              <a href="/html/login.html" class="auth-link">Entrar</a></span>
           </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer" id="footer">
     <div class="footer-c container">
       <div class="footer-box">
@@ -158,6 +157,11 @@
   </footer>
 
   <script src="/js/menu.js"></script>
+  <script src="/js/storage.js"></script>
+  <script src="/js/validation.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/notify.js"></script>
+  <script src="/js/user-popover.js"></script>
 </body>
 
 </html>

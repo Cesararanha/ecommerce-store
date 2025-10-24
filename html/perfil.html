@@ -4,21 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login — Serenne Brasil</title>
-  <meta name="description" content="Faça login para acessar sua conta na Serenne Brasil" />
+  <title>Meu Perfil — Serenne Brasil</title>
+  <meta name="description" content="Gerencie seus dados e endereços" />
   <meta name="theme-color" content="#111111" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/auth.css" />
+  <link rel="stylesheet" href="/css/account.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
+  <!-- Header -->
   <header>
     <div class="nav container">
       <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
-
       <a href="/index.html" class="logo">Serenne</a>
-
       <nav id="primary-nav" class="navbar" aria-label="Categorias">
         <a href="/html/masculino.html" class="nav-link">Masculino</a>
         <a href="/html/feminino.html" class="nav-link">Feminino</a>
@@ -27,88 +26,59 @@
         <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
         <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
       </nav>
-
       <div class="nav-icons">
         <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
           <i class="ri-user-line" id="user-icon"></i>
         </a>
         <a href="/html/cart.html" aria-label="Abrir carrinho">
-          <i class="ri-shopping-bag-line" id="cart-icon">
-            <span id="cart-count">0</span>
-          </i>
+          <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
         </a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="auth-hero">
+    <section class="page-hero">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Trilha de navegação">
           <a href="/index.html">Início</a>
           <span aria-hidden="true">›</span>
-          <span>Login</span>
+          <span>Meu Perfil</span>
         </nav>
-        <h1 class="page-title">Login</h1>
+        <h1 class="page-title">Meu Perfil</h1>
       </div>
     </section>
 
-    <section class="auth-wrap">
-      <div class="container auth-grid">
-        <div class="auth-card" role="region" aria-labelledby="login-title">
-          <h2 id="login-title" class="auth-title">Acesse sua conta</h2>
-          <p class="auth-sub">
-            Entre para acompanhar pedidos, salvar endereços e finalizar
-            compras mais rápido.
-          </p>
-
-          <form action="#" method="post" novalidate>
-            <div class="auth-field">
-              <label for="login-email">E-mail</label>
-              <input id="login-email" name="email" type="email" class="auth-input" autocomplete="email"
-                placeholder="voce@exemplo.com" required />
-            </div>
-
-            <div class="auth-field">
-              <div class="auth-row">
-                <label for="login-pass">Senha</label>
-                <a href="#" class="auth-link">Esqueceu a senha?</a>
-              </div>
-              <input id="login-pass" name="password" type="password" class="auth-input" autocomplete="current-password"
-                placeholder="••••••••" required minlength="8" />
-            </div>
-
-            <div class="auth-row" style="margin: 0.25rem 0 var(--sp-2)">
-              <label class="auth-remember">
-                <input type="checkbox" name="remember" aria-label="Manter-me conectado" />
-                Lembrar-me
+    <section class="account-wrap">
+      <div class="container account-grid">
+        <div class="account-card" role="region" aria-labelledby="profile-title">
+          <h2 id="profile-title" class="account-title">Dados pessoais</h2>
+          <form id="profile-form" novalidate>
+            <div class="grid">
+              <label>Nome
+                <input type="text" id="first-name" required />
+              </label>
+              <label>Sobrenome
+                <input type="text" id="last-name" required />
               </label>
             </div>
-
-            <button class="auth-submit" type="submit">Entrar</button>
+            <label>E-mail
+              <input type="email" id="email" required />
+            </label>
+            <div class="actions">
+              <button type="submit" class="btn-primary">Salvar</button>
+              <a href="/html/pedidos.html" class="btn-link">Meus pedidos</a>
+            </div>
           </form>
-
-          <div class="auth-divider" style="margin: var(--sp-4) 0">
-            <span>ou</span>
-          </div>
-
-          <div class="auth-providers">
-            <button class="auth-provider" type="button">
-              <i class="ri-google-fill" aria-hidden="true"></i> Continuar com
-              Google
-            </button>
-            <button class="auth-provider" type="button">
-              <i class="ri-apple-fill" aria-hidden="true"></i> Continuar com
-              Apple
-            </button>
-          </div>
-
-          <p class="auth-sub" style="margin-top: var(--sp-4); text-align: center">
-            <span class="auth-footer">Novo por aqui?
-              <a href="/html/cadastro.html" class="auth-link">Crie sua conta</a></span>
-          </p>
         </div>
-      </div>
+
+        <div class="account-card" role="region" aria-labelledby="addr-title">
+          <h2 id="addr-title" class="account-title">Endereço padrão</h2>
+          <div id="addr-summary"></div>
+          <div id="addr-actions" class="actions"></div>
+        </div>
+
+
     </section>
   </main>
 
@@ -146,12 +116,13 @@
     <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
   </footer>
 
-  <script src="/js/menu.js"></script>
   <script src="/js/storage.js"></script>
-  <script src="/js/validation.js"></script>
-  <script src="/js/auth.js"></script>
   <script src="/js/notify.js"></script>
+  <script src="/js/validation.js"></script>
+  <script src="/js/profile.js"></script>
   <script src="/js/user-popover.js"></script>
+
+
 </body>
 
 </html>
