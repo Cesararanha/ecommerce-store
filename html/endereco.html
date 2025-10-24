@@ -1,196 +1,285 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Endereço de Entrega — Serenne Brasil</title>
+    <meta
+      name="description"
+      content="Cadastre seu endereço de entrega na Serenne Brasil"
+    />
+    <meta name="theme-color" content="#111111" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/account.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Endereço de Entrega — Serenne Brasil</title>
-  <meta name="description" content="Cadastre seu endereço de entrega na Serenne Brasil" />
-  <meta name="theme-color" content="#111111" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/account.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <div class="nav container">
-      <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
-      <a href="/index.html" class="logo">Serenne</a>
-      <nav id="primary-nav" class="navbar" aria-label="Categorias">
-        <a href="/html/masculino.html" class="nav-link">Masculino</a>
-        <a href="/html/feminino.html" class="nav-link">Feminino</a>
-        <a href="/html/infantil.html" class="nav-link">Infantil</a>
-        <a href="/html/calcados.html" class="nav-link">Calçados</a>
-        <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
-        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
-      </nav>
-      <div class="nav-icons">
-        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
-          <i class="ri-user-line" id="user-icon"></i>
-        </a> <a href="/html/cart.html" aria-label="Abrir carrinho">
-          <i class="ri-shopping-bag-line" id="cart-icon"><span id="cart-count">0</span></i>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="account-hero">
-      <div class="container">
-        <nav class="breadcrumbs" aria-label="Trilha de navegação">
-          <a href="/index.html">Início</a>
-          <span aria-hidden="true">›</span>
-          <span>Endereço</span>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav container">
+        <i
+          class="ri-menu-line"
+          id="menu-icon"
+          aria-label="Abrir menu"
+          aria-controls="primary-nav"
+        ></i>
+        <a href="/index.html" class="logo">Serenne</a>
+        <nav id="primary-nav" class="navbar" aria-label="Categorias">
+          <a href="/html/masculino.html" class="nav-link">Masculino</a>
+          <a href="/html/feminino.html" class="nav-link">Feminino</a>
+          <a href="/html/infantil.html" class="nav-link">Infantil</a>
+          <a href="/html/calcados.html" class="nav-link">Calçados</a>
+          <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+          <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
         </nav>
-        <h1 class="page-title">Endereço de Entrega</h1>
-      </div>
-    </section>
-
-    <section class="account-wrap">
-      <div class="container account-grid">
-        <div class="account-card" role="region" aria-labelledby="addr-title">
-          <h2 id="addr-title" class="account-title">Cadastrar endereço</h2>
-          <p class="account-sub">Informe seu endereço para entregas.</p>
-
-          <form action="#" method="post" novalidate>
-            <div class="form-grid-2">
-              <div class="form-field">
-                <label for="full-name">Nome completo</label>
-                <input id="full-name" name="full_name" type="text" class="form-input" autocomplete="name"
-                  placeholder="Ana Silva" required>
-              </div>
-              <div class="form-field">
-                <label for="phone">Telefone</label>
-                <input id="phone" name="phone" type="tel" class="form-input" inputmode="tel"
-                  placeholder="(11) 99999-9999" autocomplete="tel">
-              </div>
-            </div>
-
-            <div class="form-grid-3" style="margin-top: var(--sp-3);">
-              <div class="form-field">
-                <label for="cep">CEP</label>
-                <input id="cep" name="cep" type="text" class="form-input" inputmode="numeric" placeholder="00000-000"
-                  autocomplete="postal-code" required>
-              </div>
-              <div class="form-field">
-                <label for="state">Estado</label>
-                <select id="state" name="state" class="form-select" autocomplete="address-level1" required>
-                  <option value="">Selecione</option>
-                  <option>AC</option>
-                  <option>AL</option>
-                  <option>AP</option>
-                  <option>AM</option>
-                  <option>BA</option>
-                  <option>CE</option>
-                  <option>DF</option>
-                  <option>ES</option>
-                  <option>GO</option>
-                  <option>MA</option>
-                  <option>MT</option>
-                  <option>MS</option>
-                  <option>MG</option>
-                  <option>PA</option>
-                  <option>PB</option>
-                  <option>PR</option>
-                  <option>PE</option>
-                  <option>PI</option>
-                  <option>RJ</option>
-                  <option>RN</option>
-                  <option>RS</option>
-                  <option>RO</option>
-                  <option>RR</option>
-                  <option>SC</option>
-                  <option>SP</option>
-                  <option>SE</option>
-                  <option>TO</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="city">Cidade</label>
-                <input id="city" name="city" type="text" class="form-input" autocomplete="address-level2"
-                  placeholder="São Paulo" required>
-              </div>
-            </div>
-
-            <div class="form-grid-2" style="margin-top: var(--sp-3);">
-              <div class="form-field">
-                <label for="street">Endereço</label>
-                <input id="street" name="street" type="text" class="form-input" autocomplete="address-line1"
-                  placeholder="Rua Exemplo, Bairro" required>
-              </div>
-              <div class="form-field">
-                <label for="number">Número</label>
-                <input id="number" name="number" type="text" class="form-input" placeholder="123" required>
-              </div>
-            </div>
-
-            <div class="form-grid-2" style="margin-top: var(--sp-3);">
-              <div class="form-field">
-                <label for="complement">Complemento (opcional)</label>
-                <input id="complement" name="complement" type="text" class="form-input"
-                  placeholder="Apto, bloco, referência…">
-              </div>
-              <div class="form-field">
-                <label for="neighborhood">Bairro</label>
-                <input id="neighborhood" name="neighborhood" type="text" class="form-input" placeholder="Centro">
-              </div>
-            </div>
-
-            <div class="form-row" style="margin: var(--sp-3) 0;">
-              <label class="form-row"><input type="checkbox" name="default" /> Usar como endereço padrão</label>
-            </div>
-
-            <button class="btn-primary" type="submit" href="./pedidos.html">Salvar endereço</button>
-          </form>
+        <div class="nav-icons">
+          <a
+            href="/html/perfil.html"
+            data-profile-trigger
+            aria-label="Minha conta"
+          >
+            <i class="ri-user-line" id="user-icon"></i>
+          </a>
+          <a href="/html/cart.html" aria-label="Abrir carrinho">
+            <i class="ri-shopping-bag-line" id="cart-icon"
+              ><span id="cart-count">0</span></i
+            >
+          </a>
         </div>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer class="footer" id="footer">
-    <div class="footer-c container">
-      <div class="footer-box">
-        <h2>Serenne</h2>
-        <div class="social">
-          <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
-          <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
-          <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
-          <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
-          <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
+    <main>
+      <section class="account-hero">
+        <div class="container">
+          <nav class="breadcrumbs" aria-label="Trilha de navegação">
+            <a href="/index.html">Início</a>
+            <span aria-hidden="true">›</span>
+            <span>Endereço</span>
+          </nav>
+          <h1 class="page-title">Endereço de Entrega</h1>
+        </div>
+      </section>
+
+      <section class="account-wrap">
+        <div class="container account-grid">
+          <div class="account-card" role="region" aria-labelledby="addr-title">
+            <h2 id="addr-title" class="account-title">Cadastrar endereço</h2>
+            <p class="account-sub">Informe seu endereço para entregas.</p>
+
+            <form action="#" method="post" novalidate>
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label for="full-name">Nome completo</label>
+                  <input
+                    id="full-name"
+                    name="full_name"
+                    type="text"
+                    class="form-input"
+                    autocomplete="name"
+                    placeholder="Ana Silva"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="phone">Telefone</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    class="form-input"
+                    inputmode="tel"
+                    placeholder="(11) 99999-9999"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form-grid-3" style="margin-top: var(--sp-3)">
+                <div class="form-field">
+                  <label for="cep">CEP</label>
+                  <input
+                    id="cep"
+                    name="cep"
+                    type="text"
+                    class="form-input"
+                    inputmode="numeric"
+                    placeholder="00000-000"
+                    autocomplete="postal-code"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="state">Estado</label>
+                  <select
+                    id="state"
+                    name="state"
+                    class="form-select"
+                    autocomplete="address-level1"
+                    required
+                  >
+                    <option value="">Selecione</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                    <option>TO</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="city">Cidade</label>
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    class="form-input"
+                    autocomplete="address-level2"
+                    placeholder="São Paulo"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-top: var(--sp-3)">
+                <div class="form-field">
+                  <label for="street">Endereço</label>
+                  <input
+                    id="street"
+                    name="street"
+                    type="text"
+                    class="form-input"
+                    autocomplete="address-line1"
+                    placeholder="Rua Exemplo, Bairro"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="number">Número</label>
+                  <input
+                    id="number"
+                    name="number"
+                    type="text"
+                    class="form-input"
+                    placeholder="123"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-top: var(--sp-3)">
+                <div class="form-field">
+                  <label for="complement">Complemento (opcional)</label>
+                  <input
+                    id="complement"
+                    name="complement"
+                    type="text"
+                    class="form-input"
+                    placeholder="Apto, bloco, referência…"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="neighborhood">Bairro</label>
+                  <input
+                    id="neighborhood"
+                    name="neighborhood"
+                    type="text"
+                    class="form-input"
+                    placeholder="Centro"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row" style="margin: var(--sp-3) 0">
+                <label class="form-row"
+                  ><input type="checkbox" name="default" /> Usar como endereço
+                  padrão</label
+                >
+              </div>
+
+              <button class="btn-primary" type="submit" href="./pedidos.html">
+                Salvar endereço
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-c container">
+        <div class="footer-box">
+          <h2>Serenne</h2>
+          <div class="social">
+            <a href="https://br.pinterest.com"
+              ><i class="ri-pinterest-line"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="https://www.facebook.com"
+              ><i class="ri-facebook-line"></i
+            ></a>
+            <a href="https://www.whatsapp.com/?lang=pt_BR"
+              ><i class="ri-whatsapp-line"></i
+            ></a>
+            <a href="https://www.youtube.com"
+              ><i class="ri-youtube-line"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-box">
+          <h3>Ajuda</h3>
+          <a href="#">Contatos</a>
+          <a href="#">FAQ</a>
+          <a href="#">Acompanhe seu pedido</a>
+          <a href="#">Métodos de pagamento</a>
+          <a href="#">Devolução</a>
+          <a href="#">Trabalhe conosco</a>
+        </div>
+        <div class="footer-box">
+          <h3>Legal e Privacidade</h3>
+          <a href="#">Aviso legal</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos e condições</a>
+          <a href="#">Política de devolução</a>
+          <a href="#">Termos de venda</a>
+          <a href="#">Comunidade</a>
         </div>
       </div>
-      <div class="footer-box">
-        <h3>Ajuda</h3>
-        <a href="#">Contatos</a>
-        <a href="#">FAQ</a>
-        <a href="#">Acompanhe seu pedido</a>
-        <a href="#">Métodos de pagamento</a>
-        <a href="#">Devolução</a>
-        <a href="#">Trabalhe conosco</a>
-      </div>
-      <div class="footer-box">
-        <h3>Legal e Privacidade</h3>
-        <a href="#">Aviso legal</a>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos e condições</a>
-        <a href="#">Política de devolução</a>
-        <a href="#">Termos de venda</a>
-        <a href="#">Comunidade</a>
-      </div>
-    </div>
-    <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
-  </footer>
+      <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
+    </footer>
 
-  <script src="/js/menu.js"></script>
-  <script src="/js/storage.js"></script>
-  <script src="/js/checkout.js"></script>
-  <script src="/js/storage.js"></script>
-  <script src="/js/user-popover.js"></script>
-
-
-</body>
-
+    <script src="/js/menu.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/checkout.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/user-popover.js"></script>
+  </body>
 </html>

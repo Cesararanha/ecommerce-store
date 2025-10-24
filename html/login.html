@@ -1,155 +1,212 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — Serenne Brasil</title>
+    <meta
+      name="description"
+      content="Faça login para acessar sua conta na Serenne Brasil"
+    />
+    <meta name="theme-color" content="#111111" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login — Serenne Brasil</title>
-  <meta name="description" content="Faça login para acessar sua conta na Serenne Brasil" />
-  <meta name="theme-color" content="#111111" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/auth.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav container">
+        <!-- Menu (mobile) -->
+        <i
+          class="ri-menu-line"
+          id="menu-icon"
+          aria-label="Abrir menu"
+          aria-controls="primary-nav"
+        ></i>
 
-<body>
-  <!-- Header -->
-  <header>
-    <div class="nav container">
-      <!-- Menu (mobile) -->
-      <i class="ri-menu-line" id="menu-icon" aria-label="Abrir menu" aria-controls="primary-nav"></i>
+        <!-- Logo -->
+        <a href="/index.html" class="logo">Serenne</a>
 
-      <!-- Logo -->
-      <a href="/index.html" class="logo">Serenne</a>
-
-      <!-- Navbar -->
-      <nav id="primary-nav" class="navbar" aria-label="Categorias">
-        <a href="/html/masculino.html" class="nav-link">Masculino</a>
-        <a href="/html/feminino.html" class="nav-link">Feminino</a>
-        <a href="/html/infantil.html" class="nav-link">Infantil</a>
-        <a href="/html/calcados.html" class="nav-link">Calçados</a>
-        <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
-        <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
-      </nav>
-
-      <!-- Ícones de conta + carrinho -->
-      <div class="nav-icons">
-        <a href="/html/perfil.html" data-profile-trigger aria-label="Minha conta">
-          <i class="ri-user-line" id="user-icon"></i>
-        </a>
-        <a href="/html/cart.html" aria-label="Abrir carrinho">
-          <i class="ri-shopping-bag-line" id="cart-icon">
-            <span id="cart-count">0</span>
-          </i>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Breadcrumbs + Title -->
-    <section class="auth-hero">
-      <div class="container">
-        <nav class="breadcrumbs" aria-label="Trilha de navegação">
-          <a href="/index.html">Início</a>
-          <span aria-hidden="true">›</span>
-          <span>Login</span>
+        <!-- Navbar -->
+        <nav id="primary-nav" class="navbar" aria-label="Categorias">
+          <a href="/html/masculino.html" class="nav-link">Masculino</a>
+          <a href="/html/feminino.html" class="nav-link">Feminino</a>
+          <a href="/html/infantil.html" class="nav-link">Infantil</a>
+          <a href="/html/calcados.html" class="nav-link">Calçados</a>
+          <a href="/html/acessorios.html" class="nav-link">Acessórios</a>
+          <a href="/html/pedidos.html" class="nav-link">Meus Pedidos</a>
         </nav>
-        <h1 class="page-title">Login</h1>
+
+        <!-- Ícones de conta + carrinho -->
+        <div class="nav-icons">
+          <a
+            href="/html/perfil.html"
+            data-profile-trigger
+            aria-label="Minha conta"
+          >
+            <i class="ri-user-line" id="user-icon"></i>
+          </a>
+          <a href="/html/cart.html" aria-label="Abrir carrinho">
+            <i class="ri-shopping-bag-line" id="cart-icon">
+              <span id="cart-count">0</span>
+            </i>
+          </a>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <section class="auth-wrap">
-      <div class="container auth-grid">
-        <div class="auth-card" role="region" aria-labelledby="login-title">
-          <h2 id="login-title" class="auth-title">Acesse sua conta</h2>
-          <p class="auth-sub">Entre para acompanhar pedidos, salvar endereços e finalizar compras mais rápido.</p>
+    <main>
+      <!-- Breadcrumbs + Title -->
+      <section class="auth-hero">
+        <div class="container">
+          <nav class="breadcrumbs" aria-label="Trilha de navegação">
+            <a href="/index.html">Início</a>
+            <span aria-hidden="true">›</span>
+            <span>Login</span>
+          </nav>
+          <h1 class="page-title">Login</h1>
+        </div>
+      </section>
 
-          <form action="#" method="post" novalidate>
-            <div class="auth-field">
-              <label for="login-email">E-mail</label>
-              <input id="login-email" name="email" type="email" class="auth-input" autocomplete="email"
-                placeholder="voce@exemplo.com" required>
-            </div>
+      <section class="auth-wrap">
+        <div class="container auth-grid">
+          <div class="auth-card" role="region" aria-labelledby="login-title">
+            <h2 id="login-title" class="auth-title">Acesse sua conta</h2>
+            <p class="auth-sub">
+              Entre para acompanhar pedidos, salvar endereços e finalizar
+              compras mais rápido.
+            </p>
 
-            <div class="auth-field">
-              <div class="auth-row">
-                <label for="login-pass">Senha</label>
-                <a href="#" class="auth-link">Esqueceu a senha?</a>
+            <form action="#" method="post" novalidate>
+              <div class="auth-field">
+                <label for="login-email">E-mail</label>
+                <input
+                  id="login-email"
+                  name="email"
+                  type="email"
+                  class="auth-input"
+                  autocomplete="email"
+                  placeholder="voce@exemplo.com"
+                  required
+                />
               </div>
-              <input id="login-pass" name="password" type="password" class="auth-input" autocomplete="current-password"
-                placeholder="••••••••" required minlength="8">
+
+              <div class="auth-field">
+                <div class="auth-row">
+                  <label for="login-pass">Senha</label>
+                  <a href="#" class="auth-link">Esqueceu a senha?</a>
+                </div>
+                <input
+                  id="login-pass"
+                  name="password"
+                  type="password"
+                  class="auth-input"
+                  autocomplete="current-password"
+                  placeholder="••••••••"
+                  required
+                  minlength="8"
+                />
+              </div>
+
+              <div class="auth-row" style="margin: 0.25rem 0 var(--sp-2)">
+                <label class="auth-remember">
+                  <input
+                    type="checkbox"
+                    name="remember"
+                    aria-label="Manter-me conectado"
+                  />
+                  Lembrar-me
+                </label>
+              </div>
+
+              <button class="auth-submit" type="submit">Entrar</button>
+            </form>
+
+            <div class="auth-divider" style="margin: var(--sp-4) 0">
+              <span>ou</span>
             </div>
 
-            <div class="auth-row" style="margin: .25rem 0 var(--sp-2);">
-              <label class="auth-remember">
-                <input type="checkbox" name="remember" aria-label="Manter-me conectado"> Lembrar-me
-              </label>
+            <div class="auth-providers">
+              <button class="auth-provider" type="button">
+                <i class="ri-google-fill" aria-hidden="true"></i> Continuar com
+                Google
+              </button>
+              <button class="auth-provider" type="button">
+                <i class="ri-apple-fill" aria-hidden="true"></i> Continuar com
+                Apple
+              </button>
             </div>
 
-            <button class="auth-submit" type="submit">Entrar</button>
-          </form>
-
-          <div class="auth-divider" style="margin: var(--sp-4) 0"><span>ou</span></div>
-
-          <div class="auth-providers">
-            <button class="auth-provider" type="button"><i class="ri-google-fill" aria-hidden="true"></i> Continuar com
-              Google</button>
-            <button class="auth-provider" type="button"><i class="ri-apple-fill" aria-hidden="true"></i> Continuar com
-              Apple</button>
+            <p
+              class="auth-sub"
+              style="margin-top: var(--sp-4); text-align: center"
+            >
+              <span class="auth-footer"
+                >Novo por aqui?
+                <a href="/html/cadastro.html" class="auth-link"
+                  >Crie sua conta</a
+                ></span
+              >
+            </p>
           </div>
+        </div>
+      </section>
+    </main>
 
-          <p class="auth-sub" style="margin-top: var(--sp-4); text-align:center;">
-            <span class="auth-footer">Novo por aqui? <a href="/html/cadastro.html" class="auth-link">Crie sua
-                conta</a></span>
-          </p>
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+      <div class="footer-c container">
+        <div class="footer-box">
+          <h2>Serenne</h2>
+          <div class="social">
+            <a href="https://br.pinterest.com"
+              ><i class="ri-pinterest-line"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="https://www.facebook.com"
+              ><i class="ri-facebook-line"></i
+            ></a>
+            <a href="https://www.whatsapp.com/?lang=pt_BR"
+              ><i class="ri-whatsapp-line"></i
+            ></a>
+            <a href="https://www.youtube.com"
+              ><i class="ri-youtube-line"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-box">
+          <h3>Ajuda</h3>
+          <a href="#">Contatos</a>
+          <a href="#">FAQ</a>
+          <a href="#">Acompanhe seu pedido</a>
+          <a href="#">Métodos de pagamento</a>
+          <a href="#">Devolução</a>
+          <a href="#">Trabalhe conosco</a>
+        </div>
+        <div class="footer-box">
+          <h3>Legal e Privacidade</h3>
+          <a href="#">Aviso legal</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos e condições</a>
+          <a href="#">Política de devolução</a>
+          <a href="#">Termos de venda</a>
+          <a href="#">Comunidade</a>
         </div>
       </div>
-    </section>
-  </main>
+      <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer" id="footer">
-    <div class="footer-c container">
-      <div class="footer-box">
-        <h2>Serenne</h2>
-        <div class="social">
-          <a href="https://br.pinterest.com"><i class="ri-pinterest-line"></i></a>
-          <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
-          <a href="https://www.facebook.com"><i class="ri-facebook-line"></i></a>
-          <a href="https://www.whatsapp.com/?lang=pt_BR"><i class="ri-whatsapp-line"></i></a>
-          <a href="https://www.youtube.com"><i class="ri-youtube-line"></i></a>
-        </div>
-      </div>
-      <div class="footer-box">
-        <h3>Ajuda</h3>
-        <a href="#">Contatos</a>
-        <a href="#">FAQ</a>
-        <a href="#">Acompanhe seu pedido</a>
-        <a href="#">Métodos de pagamento</a>
-        <a href="#">Devolução</a>
-        <a href="#">Trabalhe conosco</a>
-      </div>
-      <div class="footer-box">
-        <h3>Legal e Privacidade</h3>
-        <a href="#">Aviso legal</a>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos e condições</a>
-        <a href="#">Política de devolução</a>
-        <a href="#">Termos de venda</a>
-        <a href="#">Comunidade</a>
-      </div>
-    </div>
-    <p class="copyright container">COPYRIGHT &#169; Serenne 2025</p>
-  </footer>
-
-  <script src="/js/menu.js"></script>
-  <script src="/js/storage.js"></script>
-  <script src="/js/auth.js"></script>
-  <script src="/js/storage.js"></script>
-  <script src="/js/user-popover.js"></script>
-
-
-</body>
-
+    <script src="/js/menu.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/user-popover.js"></script>
+  </body>
 </html>
