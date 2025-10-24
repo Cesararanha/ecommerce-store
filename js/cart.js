@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const items = DB.getLegacyCart();
     if (!items || !items.length) {
-      alert("Seu carrinho está vazio.");
+      $msg.warn("Seu carrinho está vazio.");
       return;
     }
 

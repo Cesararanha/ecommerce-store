@@ -93,17 +93,13 @@
             </form>
           </div>
 
-          <div class="account-card" role="region" aria-labelledby="addr-title">
-            <h2 id="addr-title" class="account-title">Endereço padrão</h2>
-            <div id="addr-summary"></div>
-            <a href="/html/endereco.html" class="btn-secondary"
-              >Editar endereço</a
-            >
-            <button type="button" id="delete-address" class="btn-secondary">
-              Excluir endereço
-            </button>
-          </div>
-        </div>
+<div class="account-card" role="region" aria-labelledby="addr-title">
+  <h2 id="addr-title" class="account-title">Endereço padrão</h2>
+  <div id="addr-summary"></div>
+  <div id="addr-actions" class="actions"></div>
+</div>
+
+
       </section>
     </main>
 
@@ -152,8 +148,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/storage.js"></script>
-    <script src="/js/profile.js"></script>
-    <script src="/js/user-popover.js"></script>
+<script src="/js/storage.js"></script>
+<script src="/js/notify.js"></script>
+<script src="/js/validation.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/user-popover.js"></script>
+
+
   </body>
 </html>

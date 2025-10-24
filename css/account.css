@@ -252,3 +252,34 @@
   padding: 12px;
   background: #fff;
 }
+
+.btn-secondary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 16px;
+  border:1px solid var(--text);
+  background:transparent;
+  color:var(--text);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn-secondary:hover{ background:var(--text); color:var(--surface); }
+
+.btn-secondary.danger{ border-color:#b00020; color:#b00020; }
+.btn-secondary.danger:hover{ background:#b00020; color:#fff; }
+
+.account-card .actions{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+input:invalid, select:invalid {
+  outline: 1px solid #b00020;
+  outline-offset: 1px;
+}

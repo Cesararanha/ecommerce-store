@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const userId = DB.getSession()?.userId;
   if (!userId) {
-    // garante login neste passo também (acesso direto a /endereco.html)
     location.href = "/html/login.html?next=/html/endereco.html";
     return;
   }
@@ -10,7 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   if (!form) return;
 
-  // Preencher com endereço salvo, se houver
+  // helpers de mensagem (usa $msg se existir; senão, alert)
+  const msgError = (m) => (window.$msg?.error ? $msg.error(m) : alert(m));
+  const msgWarn = (m) => (window.$msg?.warn ? $msg.warn(m) : alert(m));
+  const msgFlash = (m, t = "success") =>
+    window.$msg?.flash ? $msg.flash(m, t) : alert(m);
+
+  // Lê o modo: 'checkout' (padrão) ou 'manage' (vindo do perfil)
+  const mode =
+    (typeof getQueryParam === "function"
+      ? getQueryParam("mode")
+      : new URL(location.href).searchParams.get("mode")) || "checkout";
+
+  // Preenche endereço salvo, se houver
   const saved = DB.getAddress(userId);
   if (saved) {
     const map = {
@@ -34,6 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
     const get = (n) => form.querySelector(`[name="${n}"]`)?.value?.trim() ?? "";
     const address = {
@@ -49,19 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
       isDefault: !!form.querySelector('input[name="default"]')?.checked,
     };
 
-    // validação mínima
-    const required = ["full_name", "cep", "state", "city", "street", "number"];
-    if (required.some((k) => !address[k])) {
-      alert("Preencha os campos obrigatórios do endereço.");
+    // Regras extras (além do HTML5)
+    const cepRe = /^\d{5}-?\d{3}$/;
+    if (!cepRe.test(address.cep)) {
+      msgError("CEP inválido (ex.: 57035-290)");
+      return;
+    }
+    if (!/^\d+$/.test(address.number)) {
+      msgError("Número: informe apenas dígitos.");
       return;
     }
 
+    // Sempre salva o endereço
     DB.setAddress(userId, address);
 
+    // Modo 'manage': veio do perfil -> só salva e volta
+    if (mode === "manage") {
+      msgFlash("Endereço salvo!", "success"); // aparece no perfil após redirect
+      location.href = "/html/perfil.html";
+      return;
+    }
+
+    // Modo 'checkout': criar pedido a partir do carrinho
     const items = DB.getLegacyCart();
     if (!items.length) {
-      alert("Seu carrinho está vazio.");
-      location.href = "/html/pedidos.html";
+      msgWarn("Seu carrinho está vazio.");
+      location.href = "/html/cart.html";
       return;
     }
 
@@ -74,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
       createdAt: new Date().toISOString(),
       status: "Processando",
       total,
-      // normaliza itens do seu main.js
       items: items.map((it) => ({
         name: it.name,
         price: Number(it.price),
@@ -85,9 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     DB.addOrder(userId, order);
-    DB.clearLegacyCart(); // esvazia carrinho (compat com seu main.js)
-
-    alert("Pedido criado com sucesso!");
+    DB.clearLegacyCart();
+    msgFlash("Pedido criado com sucesso!", "success"); // aparece na página de pedidos
     location.href = "/html/pedidos.html";
   });
 });

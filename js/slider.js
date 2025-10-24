@@ -27,6 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("delete-address")?.addEventListener("click", () => {
   if (!confirm("Excluir endereço padrão?")) return;
   DB.deleteAddress(user.id);
-  alert("Endereço removido.");
+  $msg.success("Endereço removido.");
   location.reload();
 });

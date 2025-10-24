@@ -10,26 +10,38 @@ document.addEventListener("DOMContentLoaded", () => {
   if (onLogin) bindLogin(form);
 });
 
+// helpers de mensagem (usa $msg se existir; senão, alert)
+function err(msg) {
+  return window.$msg?.error ? $msg.error(msg) : alert(msg);
+}
+function flashOk(msg) {
+  return window.$msg?.flash ? $msg.flash(msg, "success") : alert(msg);
+}
+
 function nextOr(fallback) {
-  const n = getQueryParam("next");
+  const n = getQueryParam?.("next");
   return n && /^\/[\w\-\/.]+$/.test(n) ? n : fallback;
 }
 
 function bindSignup(form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const firstName = document.querySelector("#first-name")?.value?.trim();
     const lastName = document.querySelector("#last-name")?.value?.trim();
     const email = document.querySelector("#cad-email")?.value?.trim();
     const pass = document.querySelector("#cad-pass")?.value ?? "";
     const pass2 = document.querySelector("#cad-pass2")?.value ?? "";
 
-    if (!firstName || !lastName || !email)
-      return alert("Preencha todos os campos.");
-    if (pass.length < 8)
-      return alert("A senha deve ter no mínimo 8 caracteres.");
-    if (pass !== pass2) return alert("As senhas não conferem.");
-    if (DB.findUserByEmail(email)) return alert("E-mail já cadastrado.");
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) return err("E-mail inválido.");
+    if (pass.length < 8) return err("A senha deve ter no mínimo 8 caracteres.");
+    if (pass !== pass2) return err("As senhas não conferem.");
+    if (DB.findUserByEmail(email)) return err("E-mail já cadastrado.");
 
     const user = {
       id: crypto.randomUUID?.() ?? String(Date.now()),
@@ -42,6 +54,8 @@ function bindSignup(form) {
     DB.upsertUser(user);
     DB.setSession(user.id);
 
+    // toast pós-redirect
+    flashOk("Conta criada com sucesso!");
     location.href = nextOr("/html/pedidos.html");
   });
 }
@@ -49,15 +63,23 @@ function bindSignup(form) {
 function bindLogin(form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const email = document.querySelector("#login-email")?.value?.trim();
     const pass = document.querySelector("#login-pass")?.value ?? "";
     const user = DB.findUserByEmail(email || "");
-    if (!user) return alert("Usuário não encontrado.");
+    if (!user) return err("Usuário não encontrado.");
 
     const passHash = await hashPassword(pass);
-    if (user.passHash !== passHash) return alert("Senha inválida.");
+    if (user.passHash !== passHash) return err("Senha inválida.");
 
     DB.setSession(user.id);
+
+    // toast pós-redirect
+    flashOk("Login realizado!");
     location.href = nextOr("/html/pedidos.html");
   });
 }
